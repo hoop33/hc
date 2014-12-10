@@ -18,7 +18,7 @@
     Color *color = [[Color alloc] initWithHexCode:params[0]];
     int percent = [params[1] intValue];
     Color *darker = [color darken:percent];
-    [app out:darker.hexCode];
+    [app out:darker];
   } else {
     if (error != NULL) {
       *error = [NSError errorWithDomain:[app errorDomain]

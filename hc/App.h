@@ -9,7 +9,7 @@
 
 + (App *)app;
 
-- (void)out:(NSString *)message;
+- (void)out:(NSObject *)message;
 - (NSString *)version;
 - (NSString *)errorDomain;
 

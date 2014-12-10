@@ -8,13 +8,18 @@
 @interface Color : NSObject
 
 @property (nonatomic, copy) NSString *hexCode;
-@property (nonatomic) float red;
-@property (nonatomic) float green;
-@property (nonatomic) float blue;
+@property (nonatomic) int red;
+@property (nonatomic) int green;
+@property (nonatomic) int blue;
+@property (nonatomic) int hue;
+@property (nonatomic) int saturation;
+@property (nonatomic) int lightness;
 
 - (instancetype)initWithHexCode:(NSString *)hexCode;
-- (instancetype)initWithRGB:(float)red green:(float)green blue:(float)blue;
+- (instancetype)initWithRGB:(int)red green:(int)green blue:(int)blue;
+- (instancetype)initWithHSL:(int)hue saturation:(int)saturation lightness:(int)lightness;
 - (Color *)lighten:(int)percent;
 - (Color *)darken:(int)percent;
+- (Color *)complement;
 
 @end

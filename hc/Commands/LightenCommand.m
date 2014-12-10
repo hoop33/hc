@@ -18,7 +18,7 @@
     Color *color = [[Color alloc] initWithHexCode:params[0]];
     int percent = [params[1] intValue];
     Color *lighter = [color lighten:percent];
-    [app out:lighter.hexCode];
+    [app out:lighter];
   } else {
     if (error != NULL) {
       *error = [NSError errorWithDomain:[app errorDomain]

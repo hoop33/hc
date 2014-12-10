@@ -68,22 +68,22 @@
 }
 
 - (void)testColorRGBShouldFillHexCodeRed {
-  Color *color = [[Color alloc] initWithRGB:1.0 green:0.0 blue:0.0];
+  Color *color = [[Color alloc] initWithRGB:255 green:0 blue:0];
   XCTAssertEqualObjects(@"#ff0000", color.hexCode);
 }
 
 - (void)testColorRGBShouldFillHexCodeGreen {
-  Color *color = [[Color alloc] initWithRGB:0.0 green:1.0 blue:0.0];
+  Color *color = [[Color alloc] initWithRGB:0 green:255 blue:0];
   XCTAssertEqualObjects(@"#00ff00", color.hexCode);
 }
 
 - (void)testColorRGBShouldFillHexCodeBlue {
-  Color *color = [[Color alloc] initWithRGB:0.0 green:0.0 blue:1.0];
+  Color *color = [[Color alloc] initWithRGB:0 green:0 blue:255];
   XCTAssertEqualObjects(@"#0000ff", color.hexCode);
 }
 
 - (void)testColorRGBShouldFillHexCodeGray {
-  Color *color = [[Color alloc] initWithRGB:0.5 green:0.5 blue:0.5];
+  Color *color = [[Color alloc] initWithRGB:127 green:127 blue:127];
   XCTAssertEqualObjects(@"#7f7f7f", color.hexCode);
 }
 
@@ -109,6 +109,38 @@
   Color *color = [[Color alloc] initWithHexCode:@"#111"];
   Color *lighter = [color lighten:100];
   XCTAssertEqualObjects(@"#222222", lighter.hexCode);
+}
+
+- (void)testHSLShouldBeCalculatedFromHexCode {
+  Color *color = [[Color alloc] initWithHexCode:@"0ff"];
+  XCTAssertEqual(180, color.hue);
+  XCTAssertEqual(100, color.saturation);
+  XCTAssertEqual(50, color.lightness);
+}
+
+- (void)testHSLShouldBeCalculatedFromRGB {
+  Color *color = [[Color alloc] initWithRGB:128 green:128 blue:0];
+  XCTAssertEqual(60, color.hue);
+  XCTAssertEqual(100, color.saturation);
+  XCTAssertEqual(25, color.lightness);
+}
+
+- (void)testHexCodeShouldBeCalculatedFromHSL {
+  Color *color = [[Color alloc] initWithHSL:240 saturation:100 lightness:50];
+  XCTAssertEqualObjects(@"#0000ff", color.hexCode);
+}
+
+- (void)testRGBShouldBeCalculatedFromHSL {
+  Color *color = [[Color alloc] initWithHSL:240 saturation:100 lightness:50];
+  XCTAssertEqual(0, color.red);
+  XCTAssertEqual(0, color.green);
+  XCTAssertEqual(255, color.blue);
+}
+
+- (void)testComplementOfRedShouldBeCyan {
+  Color *color = [[Color alloc] initWithHexCode:@"f00"];
+  Color *complement = [color complement];
+  XCTAssertEqualObjects(@"#00ffff", complement.hexCode);
 }
 
 @end
