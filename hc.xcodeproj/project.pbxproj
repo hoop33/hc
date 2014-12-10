@@ -14,6 +14,7 @@
 		5F23760C5D20EA623FFDA631 /* HelpCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23710DE89165C300E2019C /* HelpCommand.m */; };
 		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
+		5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2376B3EE28FCA611905FDD /* ComplementCommand.m */; };
 		5F237BBC45B1633F1399B78E /* CommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237251B301124792B75D9E /* CommandLine.m */; };
 		5F237FD2259B3C7F1ABD62D1 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23751025C2A3E0B376183D /* Utils.m */; };
 		C7908B861A389A620056DF4F /* hc_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7908B851A389A620056DF4F /* hc_tests.m */; };
@@ -39,10 +40,12 @@
 		5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkenCommand.h; sourceTree = "<group>"; };
 		5F2371EDF9686006E764C217 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		5F237251B301124792B75D9E /* CommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandLine.m; sourceTree = "<group>"; };
+		5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplementCommand.h; sourceTree = "<group>"; };
 		5F2373D3C46B6A0900133BD8 /* LightenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightenCommand.h; sourceTree = "<group>"; };
 		5F237472D04420FE816356D7 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		5F23751025C2A3E0B376183D /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		5F2375A08C6AC000FC317BA5 /* CommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLine.h; sourceTree = "<group>"; };
+		5F2376B3EE28FCA611905FDD /* ComplementCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplementCommand.m; sourceTree = "<group>"; };
 		5F2376DD9BBBE09F55584603 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5F2379F77FE24D8C092C05A4 /* CommandsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandsCommand.h; sourceTree = "<group>"; };
 		5F237B527CF4C012D743F716 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */,
 				5F237FF36EFD07FAA30175AF /* LightenCommand.m */,
 				5F2373D3C46B6A0900133BD8 /* LightenCommand.h */,
+				5F2376B3EE28FCA611905FDD /* ComplementCommand.m */,
+				5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */,
 				5F23703D115E1490F9E7F25A /* Color.m in Sources */,
 				5F2372B8F0F6108010FAF6DA /* LightenCommand.m in Sources */,
+				5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,10 +5,10 @@
 
 #import "Color.h"
 
-#define kDefaultHexCode @"#000000"
-#define kHexCodeLength 7
-#define kDegreesCharacterCode 176
-#define kDegreesInCircle 360
+NSString * const kDefaultHexCode = @"#000000";
+const int kHexCodeLength = 7;
+const int kDegreesCharacterCode = 176;
+const int kDegreesInCircle = 360;
 
 @implementation Color
 
