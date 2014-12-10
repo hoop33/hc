@@ -80,7 +80,7 @@
 }
 
 - (void)calculateRGB {
-  int rgb = 0;
+  uint rgb = 0;
   NSScanner *scanner = [NSScanner scannerWithString:[_hexCode substringFromIndex:1]];
   [scanner scanHexInt:&rgb];
 

@@ -1,14 +1,14 @@
 //
-// Created by Rob Warner on 12/9/14.
+// Created by Rob Warner on 12/10/14.
 // Copyright (c) 2014 Rob Warner. All rights reserved.
 //
 
-#import "DarkenCommand.h"
-#import "ErrorCodes.h"
+#import "LightenCommand.h"
 #import "App.h"
 #import "Color.h"
+#import "ErrorCodes.h"
 
-@implementation DarkenCommand
+@implementation LightenCommand
 
 - (BOOL)run:(NSArray *)params error:(NSError **)error {
   BOOL success = YES;
@@ -17,8 +17,8 @@
   if (params.count == 2) {
     Color *color = [[Color alloc] initWithHexCode:params[0]];
     int percent = [params[1] intValue];
-    Color *darker = [color darken:percent];
-    [app out:darker.hexCode];
+    Color *lighter = [color lighten:percent];
+    [app out:lighter.hexCode];
   } else {
     if (error != NULL) {
       *error = [NSError errorWithDomain:[app errorDomain]
@@ -38,11 +38,11 @@
 }
 
 - (NSString *)help {
-  return @"Darkens a color by the specified percent (expressed as a decimal).";
+  return @"Lighten a color by the specified percent (expressed as a decimal).";
 }
 
 - (NSString *)summary {
-  return @"Darken color";
+  return @"Lighten color";
 }
 
 @end
