@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5F23700C133A6F66B49EE665 /* CommandsCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */; };
+		5F23703D115E1490F9E7F25A /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237B527CF4C012D743F716 /* Color.m */; };
 		5F23753FB45DD0EEE7DC7518 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237D5BBCB342ED4B4FAEB0 /* App.m */; };
 		5F23760C5D20EA623FFDA631 /* HelpCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23710DE89165C300E2019C /* HelpCommand.m */; };
+		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
 		5F237BBC45B1633F1399B78E /* CommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237251B301124792B75D9E /* CommandLine.m */; };
 		5F237FD2259B3C7F1ABD62D1 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23751025C2A3E0B376183D /* Utils.m */; };
+		C7908B861A389A620056DF4F /* hc_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7908B851A389A620056DF4F /* hc_tests.m */; };
+		C7908B8B1A389BCD0056DF4F /* ColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7908B8A1A389BCD0056DF4F /* ColorTests.m */; };
+		C7908B8C1A389CEF0056DF4F /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237B527CF4C012D743F716 /* Color.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,22 +35,38 @@
 /* Begin PBXFileReference section */
 		5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
 		5F23710DE89165C300E2019C /* HelpCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCommand.m; sourceTree = "<group>"; };
+		5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkenCommand.h; sourceTree = "<group>"; };
 		5F2371EDF9686006E764C217 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		5F237251B301124792B75D9E /* CommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandLine.m; sourceTree = "<group>"; };
 		5F237472D04420FE816356D7 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		5F23751025C2A3E0B376183D /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		5F2375A08C6AC000FC317BA5 /* CommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLine.h; sourceTree = "<group>"; };
+		5F2376DD9BBBE09F55584603 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5F2379F77FE24D8C092C05A4 /* CommandsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandsCommand.h; sourceTree = "<group>"; };
+		5F237B527CF4C012D743F716 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		5F237BB54F8E4033198297DD /* hc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hc; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkenCommand.m; sourceTree = "<group>"; };
 		5F237C104FFAC753FFFF6BD2 /* HelpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCommand.h; sourceTree = "<group>"; };
 		5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandsCommand.m; sourceTree = "<group>"; };
 		5F237CFD7CE589370B0C52A0 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		5F237D5BBCB342ED4B4FAEB0 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		5F237DA74682CBBE0CA5F63C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7908B811A389A620056DF4F /* hc tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hc tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7908B841A389A620056DF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7908B851A389A620056DF4F /* hc_tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hc_tests.m; sourceTree = "<group>"; };
+		C7908B8A1A389BCD0056DF4F /* ColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTests.m; sourceTree = "<group>"; };
+		C7E776471A37EABA00BE7647 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5F237FF2DEEC5C1978AD27C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7908B7E1A389A620056DF4F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +84,8 @@
 				5F237C104FFAC753FFFF6BD2 /* HelpCommand.h */,
 				5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */,
 				5F2379F77FE24D8C092C05A4 /* CommandsCommand.h */,
+				5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */,
+				5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -70,15 +93,26 @@
 		5F2372CC895C86FFD53C79FE = {
 			isa = PBXGroup;
 			children = (
+				C7908B821A389A620056DF4F /* hc tests */,
 				5F237DBE10470E9503A18635 /* Products */,
 				5F237DE86E0FF11800758E6F /* hc */,
 			);
+			sourceTree = "<group>";
+		};
+		5F23747738B313FB15A0058B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F2376DD9BBBE09F55584603 /* Color.h */,
+				5F237B527CF4C012D743F716 /* Color.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5F237DBE10470E9503A18635 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				5F237BB54F8E4033198297DD /* hc */,
+				C7908B811A389A620056DF4F /* hc tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,8 +129,44 @@
 				5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */,
 				5F23751025C2A3E0B376183D /* Utils.m */,
 				5F237CFD7CE589370B0C52A0 /* Utils.h */,
+				C7E776481A37EAC200BE7647 /* Supporting Files */,
+				5F23747738B313FB15A0058B /* Models */,
 			);
 			path = hc;
+			sourceTree = "<group>";
+		};
+		C7908B821A389A620056DF4F /* hc tests */ = {
+			isa = PBXGroup;
+			children = (
+				C7908B851A389A620056DF4F /* hc_tests.m */,
+				C7908B831A389A620056DF4F /* Supporting Files */,
+				C7908B8D1A389F910056DF4F /* Models */,
+			);
+			path = "hc tests";
+			sourceTree = "<group>";
+		};
+		C7908B831A389A620056DF4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7908B841A389A620056DF4F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7908B8D1A389F910056DF4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7908B8A1A389BCD0056DF4F /* ColorTests.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C7E776481A37EAC200BE7647 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7E776471A37EABA00BE7647 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +189,23 @@
 			productReference = 5F237BB54F8E4033198297DD /* hc */;
 			productType = "com.apple.product-type.tool";
 		};
+		C7908B801A389A620056DF4F /* hc tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7908B891A389A620056DF4F /* Build configuration list for PBXNativeTarget "hc tests" */;
+			buildPhases = (
+				C7908B7D1A389A620056DF4F /* Sources */,
+				C7908B7E1A389A620056DF4F /* Frameworks */,
+				C7908B7F1A389A620056DF4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hc tests";
+			productName = "hc tests";
+			productReference = C7908B811A389A620056DF4F /* hc tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,6 +213,11 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = "Rob Warner";
+				TargetAttributes = {
+					C7908B801A389A620056DF4F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = 5F237378A25849FBEEA03C8A /* Build configuration list for PBXProject "hc" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -140,9 +232,20 @@
 			projectRoot = "";
 			targets = (
 				5F237C160765FC83B5D573DA /* hc */,
+				C7908B801A389A620056DF4F /* hc tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7908B7F1A389A620056DF4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F237E49AF0C534FF33ABA4B /* Sources */ = {
@@ -155,6 +258,18 @@
 				5F23760C5D20EA623FFDA631 /* HelpCommand.m in Sources */,
 				5F237FD2259B3C7F1ABD62D1 /* Utils.m in Sources */,
 				5F23700C133A6F66B49EE665 /* CommandsCommand.m in Sources */,
+				5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */,
+				5F23703D115E1490F9E7F25A /* Color.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7908B7D1A389A620056DF4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7908B8C1A389CEF0056DF4F /* Color.m in Sources */,
+				C7908B861A389A620056DF4F /* hc_tests.m in Sources */,
+				C7908B8B1A389BCD0056DF4F /* ColorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +319,12 @@
 		5F23752396D5B8C242CC9626 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					hc/Info.plist,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -245,9 +366,47 @@
 		5F237CA2A9703B63E8B32EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					hc/Info.plist,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
+		};
+		C7908B871A389A620056DF4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "hc tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C7908B881A389A620056DF4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "hc tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -266,6 +425,15 @@
 			buildConfigurations = (
 				5F237CA2A9703B63E8B32EE6 /* Debug */,
 				5F23752396D5B8C242CC9626 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7908B891A389A620056DF4F /* Build configuration list for PBXNativeTarget "hc tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7908B871A389A620056DF4F /* Debug */,
+				C7908B881A389A620056DF4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
