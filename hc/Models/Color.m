@@ -37,8 +37,6 @@
   Color *color =  [[Color alloc] initWithRGB:MIN(MAX(0, _red + (_red * mult)), 1.0)
                               green:MIN(MAX(0, _green + (_green * mult)), 1.0)
                                blue:MIN(MAX(0, _blue + (_blue * mult)), 1.0)];
-  NSLog(@"%.2f %.2f %.2f", mult, _red, (_red + (_red * mult)));
-  NSLog(@"CCCCCCCCCCCCC: %.2f %.2f %.2f", color.red, color.green, color.blue);
   return color;
 }
 
