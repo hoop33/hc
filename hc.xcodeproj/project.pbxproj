@@ -325,6 +325,7 @@
 		5F23752396D5B8C242CC9626 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -372,6 +373,7 @@
 		5F237CA2A9703B63E8B32EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -442,6 +444,7 @@
 				C7908B881A389A620056DF4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
