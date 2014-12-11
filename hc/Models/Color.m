@@ -76,10 +76,9 @@ const int kDegreesInCircle = 360;
 }
 
 - (Color *)lighten:(int)percent {
-  float mult = percent / 100.0;
-  return [[Color alloc] initWithRGB:MIN(MAX(0, _red + (_red * mult)), 255)
-                              green:MIN(MAX(0, _green + (_green * mult)), 255)
-                               blue:MIN(MAX(0, _blue + (_blue * mult)), 255)];
+  return [[Color alloc] initWithHSL:_hue
+                         saturation:_saturation
+                          lightness:MIN(100, _lightness + percent)];
 }
 
 - (Color *)darken:(int)percent {
@@ -142,10 +141,18 @@ const int kDegreesInCircle = 360;
 }
 
 - (void)calculateRGBFromHSL {
+  // Adapted from rapidtables.com.
+  // At least some results are off by one from LESS's.
+  // LESS uses algorithm from easyrgb.com
+  // I tried that one, and get off-by-one errors from LESS's results anyway,
+  // I assume due to rounding.
+  // I tried adding one to red, green, and blue, e.g.:
+  //   _red = MIN(255, ((red + m) * 255) + 1);
+  // And then I matched the LESS results. But then got off-by-ones in other places.
   float lightness = _lightness / 100.0f;
   float saturation = _saturation / 100.0f;
   float c = (1 - ABS((2 * lightness) - 1)) * saturation;
-  float x = c * (1 - ABS(fmodf((_hue / 60), 2) - 1));
+  float x = c * (1 - ABS(fmodf((_hue / 60.0f), 2.0f) - 1));
   float m = lightness - (c / 2);
   float red, green, blue;
   if (_hue < 60) {

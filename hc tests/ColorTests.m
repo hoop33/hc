@@ -99,16 +99,34 @@
   XCTAssertEqualObjects(@"#000000", darker.hexCode);
 }
 
+- (void)testDarkenWith25ShouldDecrease25 {
+  Color *color = [[Color alloc] initWithHSL:60 saturation:50 lightness:50];
+  Color *darker = [color darken:25];
+  XCTAssertEqual(25, darker.lightness);
+}
+
+- (void)testLightenWith25ShouldIncrease25 {
+  Color *color = [[Color alloc] initWithHSL:60 saturation:50 lightness:50];
+  Color *lighter = [color lighten:25];
+  XCTAssertEqual(75, lighter.lightness);
+}
+
 - (void)testLightenWithZeroShouldBeUnchanged {
   Color *color = [[Color alloc] initWithHexCode:@"#CCC"];
   Color *lighter = [color lighten:0];
   XCTAssertEqualObjects(color.hexCode, lighter.hexCode);
 }
 
-- (void)testLightenWithWith100ShouldBe110PercentLighter {
-  Color *color = [[Color alloc] initWithHexCode:@"#111"];
+- (void)testLightenWithWith100ShouldBeWhite {
+  Color *color = [[Color alloc] initWithHexCode:@"#000"];
   Color *lighter = [color lighten:100];
-  XCTAssertEqualObjects(@"#222222", lighter.hexCode);
+  XCTAssertEqualObjects(@"#ffffff", lighter.hexCode);
+}
+
+- (void)testLightenShouldComeCloseToLessExample {
+  Color *color = [[Color alloc] initWithHSL:90 saturation:80 lightness:50];
+  Color *lighter = [color lighten:20];
+  XCTAssertEqualObjects(@"#b2ef75", lighter.hexCode);
 }
 
 - (void)testHSLShouldBeCalculatedFromHexCode {
