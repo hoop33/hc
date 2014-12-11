@@ -35,4 +35,5 @@
 - (NSString *)summary {
   return @"List available outputs";
 }
+
 @end

@@ -7,10 +7,6 @@
 
 @interface CommandLine : NSObject
 
-@property (nonatomic, strong) NSArray *params;
-@property (nonatomic, copy) NSString *commandName;
-@property (nonatomic, copy) NSString *outputName;
-
 - (BOOL)parseParameters:(NSMutableArray *)array error:(NSError **)error;
 - (int)run;
 

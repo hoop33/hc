@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		5F23700C133A6F66B49EE665 /* CommandsCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */; };
 		5F23703D115E1490F9E7F25A /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237B527CF4C012D743F716 /* Color.m */; };
+		5F2371E9246DF1BEBCC008F4 /* OutputOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23709562CA79125D2E2C9E /* OutputOption.m */; };
 		5F2372B8F0F6108010FAF6DA /* LightenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237FF36EFD07FAA30175AF /* LightenCommand.m */; };
 		5F2372F092ADC7356A03A2C4 /* OutputsCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23700A887D5468E840DE77 /* OutputsCommand.m */; };
 		5F23733AC147A90267880471 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23727C866A78FEE2963C0E /* Response.m */; };
 		5F23753FB45DD0EEE7DC7518 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237D5BBCB342ED4B4FAEB0 /* App.m */; };
+		5F2375BC8DB137CF799CD1AB /* OptionsCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2375A98132CDEDE47CA564 /* OptionsCommand.m */; };
 		5F23760C5D20EA623FFDA631 /* HelpCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23710DE89165C300E2019C /* HelpCommand.m */; };
 		5F237661F8484ABB0BBDCB8B /* FileOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237F8C8105FDED2B32A3BC /* FileOutput.m */; };
 		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
@@ -41,7 +43,9 @@
 /* Begin PBXFileReference section */
 		5F23700A887D5468E840DE77 /* OutputsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputsCommand.m; sourceTree = "<group>"; };
 		5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
+		5F23709562CA79125D2E2C9E /* OutputOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputOption.m; sourceTree = "<group>"; };
 		5F23710DE89165C300E2019C /* HelpCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCommand.m; sourceTree = "<group>"; };
+		5F237156F21A906F16611E8A /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkenCommand.h; sourceTree = "<group>"; };
 		5F2371EDF9686006E764C217 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		5F237251B301124792B75D9E /* CommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandLine.m; sourceTree = "<group>"; };
@@ -53,9 +57,11 @@
 		5F2374F562226FAAA5253BDA /* TextOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextOutput.m; sourceTree = "<group>"; };
 		5F23751025C2A3E0B376183D /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		5F2375A08C6AC000FC317BA5 /* CommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLine.h; sourceTree = "<group>"; };
+		5F2375A98132CDEDE47CA564 /* OptionsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsCommand.m; sourceTree = "<group>"; };
 		5F2375DEC773C390B43560E4 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Output.h; sourceTree = "<group>"; };
 		5F2376B3EE28FCA611905FDD /* ComplementCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplementCommand.m; sourceTree = "<group>"; };
 		5F2376DD9BBBE09F55584603 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		5F237796CBCBF5732798656E /* OutputOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputOption.h; sourceTree = "<group>"; };
 		5F2379F77FE24D8C092C05A4 /* CommandsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandsCommand.h; sourceTree = "<group>"; };
 		5F237AF26D5F3AAC58B6837D /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		5F237B527CF4C012D743F716 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 		5F237E55E0BE950609DA47E5 /* FileOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOutput.h; sourceTree = "<group>"; };
 		5F237F8C8105FDED2B32A3BC /* FileOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOutput.m; sourceTree = "<group>"; };
 		5F237FF36EFD07FAA30175AF /* LightenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightenCommand.m; sourceTree = "<group>"; };
+		5F237FF3A00B6A7E54313A72 /* OptionsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsCommand.h; sourceTree = "<group>"; };
 		C7908B811A389A620056DF4F /* hc tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hc tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7908B841A389A620056DF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7908B851A389A620056DF4F /* hc_tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hc_tests.m; sourceTree = "<group>"; };
@@ -111,6 +118,8 @@
 				5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */,
 				5F23700A887D5468E840DE77 /* OutputsCommand.m */,
 				5F237B60778376DD20C26E68 /* OutputsCommand.h */,
+				5F2375A98132CDEDE47CA564 /* OptionsCommand.m */,
+				5F237FF3A00B6A7E54313A72 /* OptionsCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -147,6 +156,16 @@
 			path = Outputs;
 			sourceTree = "<group>";
 		};
+		5F2377B3EC161F3213CB4354 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				5F237156F21A906F16611E8A /* Option.h */,
+				5F23709562CA79125D2E2C9E /* OutputOption.m */,
+				5F237796CBCBF5732798656E /* OutputOption.h */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
 		5F237DBE10470E9503A18635 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +190,7 @@
 				C7E776481A37EAC200BE7647 /* Supporting Files */,
 				5F23747738B313FB15A0058B /* Models */,
 				5F2376609B34ED4C0D590446 /* Outputs */,
+				5F2377B3EC161F3213CB4354 /* Options */,
 			);
 			path = hc;
 			sourceTree = "<group>";
@@ -306,6 +326,8 @@
 				5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */,
 				5F2372F092ADC7356A03A2C4 /* OutputsCommand.m in Sources */,
 				5F237661F8484ABB0BBDCB8B /* FileOutput.m in Sources */,
+				5F2371E9246DF1BEBCC008F4 /* OutputOption.m in Sources */,
+				5F2375BC8DB137CF799CD1AB /* OptionsCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

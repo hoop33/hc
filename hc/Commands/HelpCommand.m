@@ -9,6 +9,7 @@
 #import "CommandsCommand.h"
 #import "Response.h"
 #import "OutputsCommand.h"
+#import "OptionsCommand.h"
 
 @implementation HelpCommand
 
@@ -33,12 +34,13 @@
 }
 
 - (NSString *)usage {
-  return @"[command | output]";
+  return @"[command | output | option]";
 }
 
 - (NSString *)help {
   return @"Displays help. If you specify a command, displays help for that command.\n"
-    @"If you specify a format, displays help for that format.\n"
+    @"If you specify an output, displays help for that output.\n"
+    @"If you specify an option, displays help for that option.\n"
     @"Otherwise, displays a help summary.";
 }
 
@@ -62,6 +64,11 @@
   Response *outputsResponse = [outputsCommand run:nil error:nil];
   [message appendString:outputsResponse.message];
 
+  [message appendString:@"\n"];
+  [message appendString:@"Options:\n"];
+  OptionsCommand *optionsCommand = [[OptionsCommand alloc] init];
+  Response *optionsResponse = [optionsCommand run:nil error:nil];
+  [message appendString:optionsResponse.message];
   return message;
 }
 

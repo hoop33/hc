@@ -8,18 +8,22 @@
 #import "Utils.h"
 #import "Command.h"
 #import "Output.h"
+#import "Option.h"
 
 #define kCommandSuffix @"Command"
 #define kOutputSuffix @"Output"
+#define kOptionSuffix @"Option"
 
 @implementation Utils
 
 static NSArray *allCommands;
 static NSArray *allOutputs;
+static NSArray *allOptions;
 
 + (void)initialize {
   NSMutableArray *commands = [NSMutableArray array];
   NSMutableArray *outputs = [NSMutableArray array];
+  NSMutableArray *options = [NSMutableArray array];
 
   Class *classes = NULL;
   int numClasses = objc_getClassList(NULL, 0);
@@ -34,6 +38,9 @@ static NSArray *allOutputs;
       } else if ([className hasSuffix:kOutputSuffix] &&
         [cls conformsToProtocol:@protocol(Output)]) {
         [outputs addObject:cls];
+      } else if ([className hasSuffix:kOptionSuffix] &&
+        [cls conformsToProtocol:@protocol(Option)]) {
+        [options addObject:cls];
       }
     }
     free(classes);
@@ -45,6 +52,7 @@ static NSArray *allOutputs;
   };
   allCommands = [commands sortedArrayUsingComparator:alphabetic];
   allOutputs = [outputs sortedArrayUsingComparator:alphabetic];
+  allOptions = [options sortedArrayUsingComparator:alphabetic];
 }
 
 + (NSArray *)allCommands {
@@ -53,6 +61,10 @@ static NSArray *allOutputs;
 
 + (NSArray *)allOutputs {
   return allOutputs;
+}
+
++ (NSArray *)allOptions {
+  return allOptions;
 }
 
 + (NSString *)nameForCommand:(id <Command>)command {
@@ -73,6 +85,41 @@ static NSArray *allOutputs;
   return [Utils instanceForName:[name capitalizedString]
                          suffix:kOutputSuffix
                        protocol:@protocol(Output)];
+}
+
++ (NSString *)nameForOption:(id <Option>)option {
+  return [Utils nameForClass:[option class] suffix:kOptionSuffix];
+}
+
++ (id)optionInstanceForName:(NSString *)name {
+  return [Utils instanceForName:[name capitalizedString]
+                         suffix:kOptionSuffix
+                       protocol:@protocol(Option)];
+}
+
++ (id)optionInstanceForShortName:(NSString *)name {
+  for (Class cls in allOptions) {
+    id <Option> option = [[cls alloc] init];
+    if ([[option shortName] isEqualToString:name]) {
+      return option;
+    }
+  }
+  return nil;
+}
+
++ (id)optionInstanceForNameOrShortName:(NSString *)name {
+  id <Option> option = nil;
+  switch (name.length) {
+    case 0:
+      break;
+    case 1:
+      option = [Utils optionInstanceForShortName:name];
+      break;
+    default:
+      option = [Utils optionInstanceForName:name];
+      break;
+  }
+  return option;
 }
 
 #pragma mark - private methods
