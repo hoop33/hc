@@ -14,6 +14,7 @@
 		5F23733AC147A90267880471 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23727C866A78FEE2963C0E /* Response.m */; };
 		5F23753FB45DD0EEE7DC7518 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237D5BBCB342ED4B4FAEB0 /* App.m */; };
 		5F23760C5D20EA623FFDA631 /* HelpCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23710DE89165C300E2019C /* HelpCommand.m */; };
+		5F237661F8484ABB0BBDCB8B /* FileOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237F8C8105FDED2B32A3BC /* FileOutput.m */; };
 		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
 		5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2374F562226FAAA5253BDA /* TextOutput.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
@@ -66,6 +67,8 @@
 		5F237CFD7CE589370B0C52A0 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		5F237D5BBCB342ED4B4FAEB0 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		5F237DA74682CBBE0CA5F63C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F237E55E0BE950609DA47E5 /* FileOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOutput.h; sourceTree = "<group>"; };
+		5F237F8C8105FDED2B32A3BC /* FileOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOutput.m; sourceTree = "<group>"; };
 		5F237FF36EFD07FAA30175AF /* LightenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightenCommand.m; sourceTree = "<group>"; };
 		C7908B811A389A620056DF4F /* hc tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hc tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7908B841A389A620056DF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,14 +135,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5F2376609B34ED4C0D590446 /* Outputters */ = {
+		5F2376609B34ED4C0D590446 /* Outputs */ = {
 			isa = PBXGroup;
 			children = (
 				5F2375DEC773C390B43560E4 /* Output.h */,
 				5F2374F562226FAAA5253BDA /* TextOutput.m */,
 				5F2374E7A82BADAE76B7EE1F /* TextOutput.h */,
+				5F237F8C8105FDED2B32A3BC /* FileOutput.m */,
+				5F237E55E0BE950609DA47E5 /* FileOutput.h */,
 			);
-			path = Outputters;
+			path = Outputs;
 			sourceTree = "<group>";
 		};
 		5F237DBE10470E9503A18635 /* Products */ = {
@@ -165,7 +170,7 @@
 				5F237CFD7CE589370B0C52A0 /* Utils.h */,
 				C7E776481A37EAC200BE7647 /* Supporting Files */,
 				5F23747738B313FB15A0058B /* Models */,
-				5F2376609B34ED4C0D590446 /* Outputters */,
+				5F2376609B34ED4C0D590446 /* Outputs */,
 			);
 			path = hc;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				5F23733AC147A90267880471 /* Response.m in Sources */,
 				5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */,
 				5F2372F092ADC7356A03A2C4 /* OutputsCommand.m in Sources */,
+				5F237661F8484ABB0BBDCB8B /* FileOutput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
