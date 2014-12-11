@@ -10,10 +10,12 @@
 		5F23700C133A6F66B49EE665 /* CommandsCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */; };
 		5F23703D115E1490F9E7F25A /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237B527CF4C012D743F716 /* Color.m */; };
 		5F2372B8F0F6108010FAF6DA /* LightenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237FF36EFD07FAA30175AF /* LightenCommand.m */; };
+		5F2372F092ADC7356A03A2C4 /* OutputsCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23700A887D5468E840DE77 /* OutputsCommand.m */; };
 		5F23733AC147A90267880471 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23727C866A78FEE2963C0E /* Response.m */; };
 		5F23753FB45DD0EEE7DC7518 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237D5BBCB342ED4B4FAEB0 /* App.m */; };
 		5F23760C5D20EA623FFDA631 /* HelpCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23710DE89165C300E2019C /* HelpCommand.m */; };
 		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
+		5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2374F562226FAAA5253BDA /* TextOutput.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
 		5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2376B3EE28FCA611905FDD /* ComplementCommand.m */; };
 		5F237BBC45B1633F1399B78E /* CommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237251B301124792B75D9E /* CommandLine.m */; };
@@ -36,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F23700A887D5468E840DE77 /* OutputsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputsCommand.m; sourceTree = "<group>"; };
 		5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
 		5F23710DE89165C300E2019C /* HelpCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCommand.m; sourceTree = "<group>"; };
 		5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkenCommand.h; sourceTree = "<group>"; };
@@ -45,13 +48,17 @@
 		5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplementCommand.h; sourceTree = "<group>"; };
 		5F2373D3C46B6A0900133BD8 /* LightenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightenCommand.h; sourceTree = "<group>"; };
 		5F237472D04420FE816356D7 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		5F2374E7A82BADAE76B7EE1F /* TextOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextOutput.h; sourceTree = "<group>"; };
+		5F2374F562226FAAA5253BDA /* TextOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextOutput.m; sourceTree = "<group>"; };
 		5F23751025C2A3E0B376183D /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		5F2375A08C6AC000FC317BA5 /* CommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLine.h; sourceTree = "<group>"; };
+		5F2375DEC773C390B43560E4 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Output.h; sourceTree = "<group>"; };
 		5F2376B3EE28FCA611905FDD /* ComplementCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplementCommand.m; sourceTree = "<group>"; };
 		5F2376DD9BBBE09F55584603 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5F2379F77FE24D8C092C05A4 /* CommandsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandsCommand.h; sourceTree = "<group>"; };
 		5F237AF26D5F3AAC58B6837D /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		5F237B527CF4C012D743F716 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
+		5F237B60778376DD20C26E68 /* OutputsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputsCommand.h; sourceTree = "<group>"; };
 		5F237BB54F8E4033198297DD /* hc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hc; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkenCommand.m; sourceTree = "<group>"; };
 		5F237C104FFAC753FFFF6BD2 /* HelpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCommand.h; sourceTree = "<group>"; };
@@ -99,6 +106,8 @@
 				5F2373D3C46B6A0900133BD8 /* LightenCommand.h */,
 				5F2376B3EE28FCA611905FDD /* ComplementCommand.m */,
 				5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */,
+				5F23700A887D5468E840DE77 /* OutputsCommand.m */,
+				5F237B60778376DD20C26E68 /* OutputsCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -121,6 +130,16 @@
 				5F237AF26D5F3AAC58B6837D /* Response.h */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5F2376609B34ED4C0D590446 /* Outputters */ = {
+			isa = PBXGroup;
+			children = (
+				5F2375DEC773C390B43560E4 /* Output.h */,
+				5F2374F562226FAAA5253BDA /* TextOutput.m */,
+				5F2374E7A82BADAE76B7EE1F /* TextOutput.h */,
+			);
+			path = Outputters;
 			sourceTree = "<group>";
 		};
 		5F237DBE10470E9503A18635 /* Products */ = {
@@ -146,6 +165,7 @@
 				5F237CFD7CE589370B0C52A0 /* Utils.h */,
 				C7E776481A37EAC200BE7647 /* Supporting Files */,
 				5F23747738B313FB15A0058B /* Models */,
+				5F2376609B34ED4C0D590446 /* Outputters */,
 			);
 			path = hc;
 			sourceTree = "<group>";
@@ -278,6 +298,8 @@
 				5F2372B8F0F6108010FAF6DA /* LightenCommand.m in Sources */,
 				5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */,
 				5F23733AC147A90267880471 /* Response.m in Sources */,
+				5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */,
+				5F2372F092ADC7356A03A2C4 /* OutputsCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

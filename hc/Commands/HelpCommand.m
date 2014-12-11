@@ -8,6 +8,7 @@
 #import "ErrorCodes.h"
 #import "CommandsCommand.h"
 #import "Response.h"
+#import "OutputsCommand.h"
 
 @implementation HelpCommand
 
@@ -32,11 +33,12 @@
 }
 
 - (NSString *)usage {
-  return @"[command]";
+  return @"[command | output]";
 }
 
 - (NSString *)help {
   return @"Displays help. If you specify a command, displays help for that command.\n"
+    @"If you specify a format, displays help for that format.\n"
     @"Otherwise, displays a help summary.";
 }
 
@@ -48,12 +50,18 @@
   NSMutableString *message = [NSMutableString string];
   [message appendString:@"Usage: hc <command> [<args>]\n"];
   [message appendString:@"\n"];
-  [message appendString:@"Commands:\n"];
-  [message appendString:@"\n"];
 
+  [message appendString:@"Commands:\n"];
   CommandsCommand *commandsCommand = [[CommandsCommand alloc] init];
-  Response *response = [commandsCommand run:nil error:nil];
-  [message appendString:response.message];
+  Response *commandsResponse = [commandsCommand run:nil error:nil];
+  [message appendString:commandsResponse.message];
+
+  [message appendString:@"\n"];
+  [message appendString:@"Outputs:\n"];
+  OutputsCommand *outputsCommand = [[OutputsCommand alloc] init];
+  Response *outputsResponse = [outputsCommand run:nil error:nil];
+  [message appendString:outputsResponse.message];
+
   return message;
 }
 

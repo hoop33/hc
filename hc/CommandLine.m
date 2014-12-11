@@ -10,6 +10,7 @@
 #import "Utils.h"
 #import "Color.h"
 #import "Response.h"
+#import "Output.h"
 
 @implementation CommandLine
 
@@ -29,6 +30,9 @@
   if (_commandName == nil) {
     _commandName = @"help";
   }
+  if (_outputName == nil) {
+    _outputName = @"text";
+  }
   return YES;
 }
 
@@ -36,9 +40,14 @@
   int returnCode = ErrorCodeSuccess;
   App *app = [App app];
   id <Command> command = [Utils commandInstanceForName:_commandName];
+  id <Output> output = [Utils outputInstanceForName:_outputName];
   if (command == nil) {
     [app out:[NSString stringWithFormat:@"'%@' is not a valid command. See 'hc help'.",
                                         _commandName]];
+    returnCode = ErrorCodeBadInput;
+  } else if (output == nil) {
+    [app out:[NSString stringWithFormat:@"'%@' is not a valid output. See 'hc help'.",
+                                        _outputName]];
     returnCode = ErrorCodeBadInput;
   } else {
     NSError *error;
@@ -51,13 +60,7 @@
         returnCode = ErrorCodeUnknown;
       }
     } else {
-      for (Color *color in response.colors) {
-        [app out:color];
-        [app out:@"\n"];
-      }
-      if (response.message != nil) {
-        [app out:response.message];
-      }
+      [output output:response];
     }
   }
   return returnCode;
