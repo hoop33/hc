@@ -5,9 +5,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class Response;
+
 @protocol Command <NSObject>
 
-- (BOOL)run:(NSArray *)params error:(NSError **)error;
+- (Response *)run:(NSArray *)params error:(NSError **)error;
 - (NSString *)usage;
 - (NSString *)help;
 - (NSString *)summary;

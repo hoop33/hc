@@ -7,13 +7,15 @@
 #import "App.h"
 #import "ErrorCodes.h"
 #import "CommandsCommand.h"
+#import "Response.h"
 
 @implementation HelpCommand
 
-- (BOOL)run:(NSArray *)params error:(NSError **)error {
-  BOOL success = YES;
+- (Response *)run:(NSArray *)params error:(NSError **)error {
+  Response *response = nil;
   if (params.count == 0) {
-    [self showAll];
+    response = [[Response alloc] init];
+    response.message = [self showAll];
   } else {
     if (![self show:params[0]]) {
       if (error != NULL) {
@@ -24,10 +26,9 @@
                                    [NSString stringWithFormat:@"%@ is not a valid command", params[0]]
                                  }];
       }
-      success = NO;
     }
   }
-  return success;
+  return response;
 }
 
 - (NSString *)usage {
@@ -43,14 +44,17 @@
   return @"Display help";
 }
 
-- (void)showAll {
-  App *app = [App app];
-  [app out:[NSString stringWithFormat:@"Usage: hc <command> [<args>]"]];
-  [app out:@""];
-  [app out:@"Commands:"];
+- (NSString *)showAll {
+  NSMutableString *message = [NSMutableString string];
+  [message appendString:@"Usage: hc <command> [<args>]\n"];
+  [message appendString:@"\n"];
+  [message appendString:@"Commands:\n"];
+  [message appendString:@"\n"];
 
   CommandsCommand *commandsCommand = [[CommandsCommand alloc] init];
-  [commandsCommand run:nil error:nil];
+  Response *response = [commandsCommand run:nil error:nil];
+  [message appendString:response.message];
+  return message;
 }
 
 - (BOOL)show:(NSString *)command {

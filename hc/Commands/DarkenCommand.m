@@ -5,32 +5,31 @@
 
 #import "DarkenCommand.h"
 #import "ErrorCodes.h"
-#import "App.h"
 #import "Color.h"
+#import "App.h"
+#import "Response.h"
 
 @implementation DarkenCommand
 
-- (BOOL)run:(NSArray *)params error:(NSError **)error {
-  BOOL success = YES;
-  App *app = [App app];
-
+- (Response *)run:(NSArray *)params error:(NSError **)error {
+  Response *response = nil;
   if (params.count == 2) {
     Color *color = [[Color alloc] initWithHexCode:params[0]];
     int percent = [params[1] intValue];
-    Color *darker = [color darken:percent];
-    [app out:darker];
+    response = [[Response alloc] init];
+    [response add:color];
+    [response add:[color darken:percent]];
   } else {
     if (error != NULL) {
-      *error = [NSError errorWithDomain:[app errorDomain]
+      *error = [NSError errorWithDomain:[[App app] errorDomain]
                                    code:ErrorCodeBadInput
                                userInfo:@{
                                  NSLocalizedDescriptionKey :
                                  @"You must specify a color and a percent."
                                }];
     }
-    success = NO;
   }
-  return success;
+  return response;
 }
 
 - (NSString *)usage {

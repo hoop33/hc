@@ -8,6 +8,8 @@
 #import "ErrorCodes.h"
 #import "App.h"
 #import "Utils.h"
+#import "Color.h"
+#import "Response.h"
 
 @implementation CommandLine
 
@@ -36,16 +38,25 @@
   id <Command> command = [Utils commandInstanceForName:_commandName];
   if (command == nil) {
     [app out:[NSString stringWithFormat:@"'%@' is not a valid command. See 'hc help'.",
-    _commandName]];
+                                        _commandName]];
     returnCode = ErrorCodeBadInput;
   } else {
     NSError *error;
-    if (![command run:_params error:&error]) {
+    Response *response = [command run:_params error:&error];
+    if (response == nil) {
       if (error != NULL) {
         [app out:error.localizedDescription];
         returnCode = (int) error.code;
       } else {
         returnCode = ErrorCodeUnknown;
+      }
+    } else {
+      for (Color *color in response.colors) {
+        [app out:color];
+        [app out:@"\n"];
+      }
+      if (response.message != nil) {
+        [app out:response.message];
       }
     }
   }

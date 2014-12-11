@@ -17,7 +17,7 @@
 }
 
 - (void)out:(NSObject *)output {
-  printf("%s\n", [[output description] UTF8String]);
+  printf("%s", [[output description] UTF8String]);
 }
 
 - (NSString *)version {

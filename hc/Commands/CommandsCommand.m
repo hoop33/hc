@@ -5,20 +5,21 @@
 
 #import "CommandsCommand.h"
 #import "Utils.h"
-#import "App.h"
-
+#import "Response.h"
 
 @implementation CommandsCommand
 
-- (BOOL)run:(NSArray *)params error:(NSError **)error {
-  App *app = [App app];
+- (Response *)run:(NSArray *)params error:(NSError **)error {
+  NSMutableString *message = [[NSMutableString alloc] init];
   for (Class cls in [Utils allCommands]) {
     id <Command> command = [[cls alloc] init];
-    [app out:[NSString stringWithFormat:@"   %-12s%@",
-                                        [[Utils nameForCommand:command] UTF8String],
-                                        [command summary]]];
+    [message appendFormat:@"%-12s%@\n",
+                          [[Utils nameForCommand:command] UTF8String],
+                          [command summary]];
   }
-  return YES;
+  Response *response = [[Response alloc] init];
+  response.message = message;
+  return response;
 }
 
 - (NSString *)usage {

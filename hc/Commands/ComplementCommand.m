@@ -4,32 +4,31 @@
 //
 
 #import "ComplementCommand.h"
-#import "App.h"
 #import "Color.h"
 #import "ErrorCodes.h"
+#import "Response.h"
+#import "App.h"
 
 @implementation ComplementCommand
 
-- (BOOL)run:(NSArray *)params error:(NSError **)error {
-  BOOL success = YES;
-  App *app = [App app];
-
+- (Response *)run:(NSArray *)params error:(NSError **)error {
+  Response *response = nil;
   if (params.count == 1) {
     Color *color = [[Color alloc] initWithHexCode:params[0]];
-    Color *complement = [color complement];
-    [app out:complement];
+    response = [[Response alloc] init];
+    [response add:color];
+    [response add:[color complement]];
   } else {
     if (error != NULL) {
-      *error = [NSError errorWithDomain:[app errorDomain]
+      *error = [NSError errorWithDomain:[[App app] errorDomain]
                                    code:ErrorCodeBadInput
                                userInfo:@{
                                  NSLocalizedDescriptionKey :
                                  @"You must specify a color."
                                }];
     }
-    success = NO;
   }
-  return success;
+  return response;
 }
 
 - (NSString *)usage {
