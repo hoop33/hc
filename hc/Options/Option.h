@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, OptionType) {
-  OptionTypeUnknown = 0,
+  OptionTypeNone = 0,
   OptionTypeBoolean,
   OptionTypeInteger,
   OptionTypeString

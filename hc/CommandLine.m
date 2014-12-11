@@ -12,6 +12,7 @@
 #import "Output.h"
 #import "Option.h"
 #import "OutputOption.h"
+#import "VersionOption.h"
 
 @interface CommandLine ()
 @property(nonatomic, strong) NSArray *params;
@@ -56,7 +57,8 @@
   } else {
     _params = [NSArray arrayWithArray:args];
     if (_commandName == nil) {
-      _commandName = @"help";
+      _commandName = _options[[VersionOption className]] == nil ?
+        @"help" : @"version";
     }
     return YES;
   }
