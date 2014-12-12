@@ -89,6 +89,16 @@ const int kDegreesInCircle = 360;
   return [self lighten:-percent];
 }
 
+- (Color *)saturate:(int)percent {
+  return [[Color alloc] initWithHSL:_hue
+                         saturation:MIN(100, _saturation + percent)
+                          lightness:_lightness];
+}
+
+- (Color *)desaturate:(int)percent {
+  return [self saturate:-percent];
+}
+
 - (NSImage *)asImage:(CGSize)size {
   NSRect rect = NSRectFromCGRect(CGRectMake(0.0f,
     0.0f,

@@ -191,4 +191,36 @@
   XCTAssertEqualObjects(spin1.hexCode, spin2.hexCode);
 }
 
+- (void)testSaturateBy0ShouldBeUnchanged {
+  Color *color = [[Color alloc] initWithHSL:45
+                                saturation:50
+                                 lightness:50];
+  Color *saturate = [color saturate:0];
+  XCTAssertEqualObjects(color.hexCode, saturate.hexCode);
+}
+
+- (void)testDesaturateBy0ShouldBeUnchanged {
+  Color *color = [[Color alloc] initWithHSL:45
+                                 saturation:50
+                                  lightness:50];
+  Color *saturate = [color desaturate:0];
+  XCTAssertEqualObjects(color.hexCode, saturate.hexCode);
+}
+
+- (void)testSaturateBy25ShouldSaturate {
+  Color *color = [[Color alloc] initWithHSL:45
+                                 saturation:50
+                                  lightness:50];
+  Color *saturate = [color saturate:25];
+  XCTAssertEqual(75, saturate.saturation);
+}
+
+- (void)testDesaturateBy25ShouldDesaturate {
+  Color *color = [[Color alloc] initWithHSL:45
+                                 saturation:50
+                                  lightness:50];
+  Color *saturate = [color desaturate:25];
+  XCTAssertEqual(25, saturate.saturation);
+}
+
 @end

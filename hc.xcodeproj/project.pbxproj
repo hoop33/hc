@@ -23,6 +23,8 @@
 		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
 		5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2374F562226FAAA5253BDA /* TextOutput.m */; };
 		5F2377671360421F35BA59A2 /* VersionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237CE84ECDB2ABD7E4B110 /* VersionCommand.m */; };
+		5F2378B2FAE9BD11CB359E88 /* SaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2373835BFC918065E555F9 /* SaturateCommand.m */; };
+		5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
 		5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2376B3EE28FCA611905FDD /* ComplementCommand.m */; };
 		5F237BBAFCD717A3D8299182 /* ShowCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2378397C2F4E99078A0B9B /* ShowCommand.m */; };
@@ -49,6 +51,7 @@
 		5F23700A887D5468E840DE77 /* OutputsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputsCommand.m; sourceTree = "<group>"; };
 		5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
 		5F23709562CA79125D2E2C9E /* OutputOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputOption.m; sourceTree = "<group>"; };
+		5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesaturateCommand.m; sourceTree = "<group>"; };
 		5F23710DE89165C300E2019C /* HelpCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCommand.m; sourceTree = "<group>"; };
 		5F237156F21A906F16611E8A /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkenCommand.h; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		5F237251B301124792B75D9E /* CommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandLine.m; sourceTree = "<group>"; };
 		5F23726BBCCC5CF3AC1EF702 /* SpinCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinCommand.h; sourceTree = "<group>"; };
 		5F23727C866A78FEE2963C0E /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		5F2373835BFC918065E555F9 /* SaturateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaturateCommand.m; sourceTree = "<group>"; };
 		5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplementCommand.h; sourceTree = "<group>"; };
 		5F2373D3C46B6A0900133BD8 /* LightenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightenCommand.h; sourceTree = "<group>"; };
 		5F237472D04420FE816356D7 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		5F2376A50EF1CBF5E745828D /* VersionOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionOption.m; sourceTree = "<group>"; };
 		5F2376B3EE28FCA611905FDD /* ComplementCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplementCommand.m; sourceTree = "<group>"; };
 		5F2376DD9BBBE09F55584603 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		5F2377129A9688DDABFB7FA7 /* SaturateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaturateCommand.h; sourceTree = "<group>"; };
 		5F237796CBCBF5732798656E /* OutputOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputOption.h; sourceTree = "<group>"; };
 		5F23780FB7E5FA0BFC207E66 /* VersionOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionOption.h; sourceTree = "<group>"; };
 		5F2378397C2F4E99078A0B9B /* ShowCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCommand.m; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		5F237B60778376DD20C26E68 /* OutputsCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputsCommand.h; sourceTree = "<group>"; };
 		5F237B6D66A3B70E46EF2BB0 /* SpinCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinCommand.m; sourceTree = "<group>"; };
 		5F237BB54F8E4033198297DD /* hc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hc; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F237BC5CD3A70295778513B /* DesaturateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesaturateCommand.h; sourceTree = "<group>"; };
 		5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkenCommand.m; sourceTree = "<group>"; };
 		5F237C104FFAC753FFFF6BD2 /* HelpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCommand.h; sourceTree = "<group>"; };
 		5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandsCommand.m; sourceTree = "<group>"; };
@@ -142,6 +148,10 @@
 				5F237E4E48DBC18A06EE607F /* ShowCommand.h */,
 				5F237B6D66A3B70E46EF2BB0 /* SpinCommand.m */,
 				5F23726BBCCC5CF3AC1EF702 /* SpinCommand.h */,
+				5F2373835BFC918065E555F9 /* SaturateCommand.m */,
+				5F2377129A9688DDABFB7FA7 /* SaturateCommand.h */,
+				5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */,
+				5F237BC5CD3A70295778513B /* DesaturateCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -361,6 +371,8 @@
 				5F23711A3A6F9788094FF42C /* NoteOutput.m in Sources */,
 				5F23764BBB4B536C93B65ED3 /* ClipOutput.m in Sources */,
 				5F237161CF8FDE90609483F4 /* SpinCommand.m in Sources */,
+				5F2378B2FAE9BD11CB359E88 /* SaturateCommand.m in Sources */,
+				5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
