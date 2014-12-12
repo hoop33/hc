@@ -269,4 +269,25 @@
   XCTAssertTrue(mix.red > mix.blue);
 }
 
+- (void)testMultiplyByBlackShouldBeBlack {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *multiply = [color1 multiply:color2];
+  XCTAssertEqualObjects(@"#000000", multiply.hexCode);
+}
+
+- (void)testMultiplyByWhiteShouldBeUnchanged {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *multiply = [color1 multiply:color2];
+  XCTAssertEqualObjects(color1.hexCode, multiply.hexCode);
+}
+
+- (void)testMultiplyShouldBeDarker {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"333"];
+  Color *multiply = [color1 multiply:color2];
+  XCTAssertTrue(color1.lightness > multiply.lightness);
+}
+
 @end

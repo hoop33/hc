@@ -112,6 +112,12 @@ const int kDegreesInCircle = 360;
                                blue:(_blue * percent1) + (color.blue * percent2)];
 }
 
+- (Color *)multiply:(Color *)color {
+  return [[Color alloc] initWithRGB:(_red * color.red) / 255.0f
+                              green:(_green * color.green) / 255.0f
+                               blue:(_blue * color.blue) / 255.0f];
+}
+
 - (NSImage *)asImage:(CGSize)size {
   NSRect rect = NSRectFromCGRect(CGRectMake(0.0f,
     0.0f,
