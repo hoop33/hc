@@ -161,4 +161,34 @@
   XCTAssertEqualObjects(@"#00ffff", complement.hexCode);
 }
 
+- (void)testSpinOf0ShouldBeUnchanged {
+  Color *color = [[Color alloc] initWithHSL:340
+                                 saturation:75
+                                  lightness:72];
+  Color *spin = [color spin:0];
+  XCTAssertEqualObjects(color.hexCode, spin.hexCode);
+}
+
+- (void)testSpinOf360ShouldBeUnchanged {
+  Color *color = [[Color alloc] initWithHSL:340
+                                 saturation:75
+                                  lightness:72];
+  Color *spin = [color spin:360];
+  XCTAssertEqualObjects(color.hexCode, spin.hexCode);
+}
+
+- (void)testSpinOf365ShouldBeSpinOf5 {
+  Color *color = [[Color alloc] initWithHexCode:@"123456"];
+  Color *spin1 = [color spin:365];
+  Color *spin2 = [color spin:5];
+  XCTAssertEqualObjects(spin1.hexCode, spin2.hexCode);
+}
+
+- (void)testSpinOfNeg355ShouldBeSpinOf5 {
+  Color *color = [[Color alloc] initWithHexCode:@"123456"];
+  Color *spin1 = [color spin:-355];
+  Color *spin2 = [color spin:5];
+  XCTAssertEqualObjects(spin1.hexCode, spin2.hexCode);
+}
+
 @end

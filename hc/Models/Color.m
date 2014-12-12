@@ -68,11 +68,13 @@ const int kDegreesInCircle = 360;
 }
 
 - (Color *)complement {
-  int hue = _hue + (kDegreesInCircle / 2);
-  if (hue >= kDegreesInCircle) {
-    hue -= kDegreesInCircle;
-  }
-  return [[Color alloc] initWithHSL:hue
+  return [self spin:kDegreesInCircle / 2];
+}
+
+- (Color *)spin:(int)degrees {
+  degrees %= kDegreesInCircle;
+  if (degrees < 0) degrees += kDegreesInCircle;
+  return [[Color alloc] initWithHSL:_hue + degrees
                          saturation:_saturation
                           lightness:_lightness];
 }

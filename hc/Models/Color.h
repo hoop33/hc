@@ -21,6 +21,7 @@
 - (Color *)lighten:(int)percent;
 - (Color *)darken:(int)percent;
 - (Color *)complement;
+- (Color *)spin:(int)degrees;
 - (NSImage *)asImage:(CGSize)size;
 
 @end
