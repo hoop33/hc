@@ -25,6 +25,7 @@
 		5F2377671360421F35BA59A2 /* VersionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237CE84ECDB2ABD7E4B110 /* VersionCommand.m */; };
 		5F2378B2FAE9BD11CB359E88 /* SaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2373835BFC918065E555F9 /* SaturateCommand.m */; };
 		5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */; };
+		5F2379A860113594388F0869 /* GrayscaleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237077005C33545CD4F05F /* GrayscaleCommand.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
 		5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2376B3EE28FCA611905FDD /* ComplementCommand.m */; };
 		5F237BBAFCD717A3D8299182 /* ShowCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2378397C2F4E99078A0B9B /* ShowCommand.m */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		5F23700A887D5468E840DE77 /* OutputsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputsCommand.m; sourceTree = "<group>"; };
 		5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
+		5F237077005C33545CD4F05F /* GrayscaleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayscaleCommand.m; sourceTree = "<group>"; };
 		5F23709562CA79125D2E2C9E /* OutputOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputOption.m; sourceTree = "<group>"; };
 		5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesaturateCommand.m; sourceTree = "<group>"; };
 		5F23710DE89165C300E2019C /* HelpCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCommand.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		5F237BC5CD3A70295778513B /* DesaturateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesaturateCommand.h; sourceTree = "<group>"; };
 		5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkenCommand.m; sourceTree = "<group>"; };
 		5F237C104FFAC753FFFF6BD2 /* HelpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCommand.h; sourceTree = "<group>"; };
+		5F237C2DDA87BA85C62A61A3 /* GrayscaleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayscaleCommand.h; sourceTree = "<group>"; };
 		5F237C5AC918DD0C832BAD48 /* CommandsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandsCommand.m; sourceTree = "<group>"; };
 		5F237CE84ECDB2ABD7E4B110 /* VersionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionCommand.m; sourceTree = "<group>"; };
 		5F237CFD7CE589370B0C52A0 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				5F2377129A9688DDABFB7FA7 /* SaturateCommand.h */,
 				5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */,
 				5F237BC5CD3A70295778513B /* DesaturateCommand.h */,
+				5F237077005C33545CD4F05F /* GrayscaleCommand.m */,
+				5F237C2DDA87BA85C62A61A3 /* GrayscaleCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				5F237161CF8FDE90609483F4 /* SpinCommand.m in Sources */,
 				5F2378B2FAE9BD11CB359E88 /* SaturateCommand.m in Sources */,
 				5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */,
+				5F2379A860113594388F0869 /* GrayscaleCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

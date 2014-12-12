@@ -99,6 +99,10 @@ const int kDegreesInCircle = 360;
   return [self saturate:-percent];
 }
 
+- (Color *)grayscale {
+  return [self desaturate:100];
+}
+
 - (NSImage *)asImage:(CGSize)size {
   NSRect rect = NSRectFromCGRect(CGRectMake(0.0f,
     0.0f,

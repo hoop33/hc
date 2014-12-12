@@ -239,4 +239,14 @@
   XCTAssertEqual(50, desaturate.lightness);
 }
 
+- (void)testShouldBeDesaturate100 {
+  Color *color = [[Color alloc] initWithHSL:45
+                                 saturation:50
+                                  lightness:50];
+  Color *desaturate = [color desaturate:100];
+  Color *grayscale = [color grayscale];
+  XCTAssertEqualObjects(desaturate.hexCode, grayscale.hexCode);
+}
+
+
 @end
