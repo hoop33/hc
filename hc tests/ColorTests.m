@@ -203,8 +203,8 @@
   Color *color = [[Color alloc] initWithHSL:45
                                  saturation:50
                                   lightness:50];
-  Color *saturate = [color desaturate:0];
-  XCTAssertEqualObjects(color.hexCode, saturate.hexCode);
+  Color *desaturate = [color desaturate:0];
+  XCTAssertEqualObjects(color.hexCode, desaturate.hexCode);
 }
 
 - (void)testSaturateBy25ShouldSaturate {
@@ -219,8 +219,24 @@
   Color *color = [[Color alloc] initWithHSL:45
                                  saturation:50
                                   lightness:50];
-  Color *saturate = [color desaturate:25];
-  XCTAssertEqual(25, saturate.saturation);
+  Color *desaturate = [color desaturate:25];
+  XCTAssertEqual(25, desaturate.saturation);
+}
+
+- (void)testDarkenBy100PreservesSaturation {
+  Color *color = [[Color alloc] initWithHSL:45
+                                 saturation:50
+                                  lightness:50];
+  Color *darken = [color darken:100];
+  XCTAssertEqual(50, darken.saturation);
+}
+
+- (void)testDesaturateBy100PreservesLightness {
+  Color *color = [[Color alloc] initWithHSL:45
+                                 saturation:50
+                                  lightness:50];
+  Color *desaturate = [color desaturate:100];
+  XCTAssertEqual(50, desaturate.lightness);
 }
 
 @end

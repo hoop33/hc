@@ -82,7 +82,7 @@ const int kDegreesInCircle = 360;
 - (Color *)lighten:(int)percent {
   return [[Color alloc] initWithHSL:_hue
                          saturation:_saturation
-                          lightness:MIN(100, _lightness + percent)];
+                          lightness:MAX(0, MIN(100, _lightness + percent))];
 }
 
 - (Color *)darken:(int)percent {
@@ -91,7 +91,7 @@ const int kDegreesInCircle = 360;
 
 - (Color *)saturate:(int)percent {
   return [[Color alloc] initWithHSL:_hue
-                         saturation:MIN(100, _saturation + percent)
+                         saturation:MAX(0, MIN(100, _saturation + percent))
                           lightness:_lightness];
 }
 
