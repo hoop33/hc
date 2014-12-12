@@ -13,22 +13,10 @@
 
 - (void)output:(Response *)response {
   [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-
-  CGSize size = CGSizeMake(128.0, 128.0);
-  NSRect rect = NSRectFromCGRect(CGRectMake(0.0f, 0.0f, size.width, size.height));
   for (Color *color in response.colors) {
-    NSImage *image = [[NSImage alloc] initWithSize:size];
-    [image lockFocus];
-    [[NSColor colorWithDeviceRed:(color.red / 255.0f)
-                           green:(color.green / 255.0f)
-                            blue:(color.blue / 255.0f)
-                           alpha:1.0f] set];
-    NSRectFill(rect);
-    [image unlockFocus];
-
     [self notify:color.hexCode
             text:[color description]
-           image:image];
+           image:[color asImage:CGSizeMake(44.0f, 44.0f)]];
   }
   if (response.message != nil) {
     [self notify:@"hc"

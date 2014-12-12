@@ -3,9 +3,11 @@
 // Copyright (c) 2014 Rob Warner. All rights reserved.
 //
 
+@import AppKit;
+
 #import "Color.h"
 
-NSString * const kDefaultHexCode = @"#000000";
+NSString *const kDefaultHexCode = @"#000000";
 const int kHexCodeLength = 7;
 const int kDegreesCharacterCode = 176;
 const int kDegreesInCircle = 360;
@@ -60,7 +62,7 @@ const int kDegreesInCircle = 360;
                                     _green,
                                     _blue,
                                     _hue,
-      kDegreesCharacterCode,
+                                    kDegreesCharacterCode,
                                     _saturation,
                                     _lightness];
 }
@@ -83,6 +85,22 @@ const int kDegreesInCircle = 360;
 
 - (Color *)darken:(int)percent {
   return [self lighten:-percent];
+}
+
+- (NSImage *)asImage:(CGSize)size {
+  NSRect rect = NSRectFromCGRect(CGRectMake(0.0f,
+    0.0f,
+    size.width,
+    size.height));
+  NSImage *image = [[NSImage alloc] initWithSize:size];
+  [image lockFocus];
+  [[NSColor colorWithDeviceRed:(_red / 255.0f)
+                         green:(_green / 255.0f)
+                          blue:(_blue / 255.0f)
+                         alpha:1.0f] set];
+  NSRectFill(rect);
+  [image unlockFocus];
+  return image;
 }
 
 #pragma mark - Private methods

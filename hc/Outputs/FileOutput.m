@@ -15,13 +15,9 @@
   CGSize size = CGSizeMake(128.0, 128.0);
   NSRect rect = NSRectFromCGRect(CGRectMake(0.0f, 0.0f, size.width, size.height));
   for (Color *color in response.colors) {
-    NSImage *image = [[NSImage alloc] initWithSize:size];
+    NSImage *image = [color asImage:size];
+
     [image lockFocus];
-    [[NSColor colorWithDeviceRed:(color.red / 255.0f)
-                           green:(color.green / 255.0f)
-                            blue:(color.blue / 255.0f)
-                           alpha:1.0f] set];
-    NSRectFill(rect);
     NSBitmapImageRep *bitmapImageRep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:rect];
     [image unlockFocus];
 
