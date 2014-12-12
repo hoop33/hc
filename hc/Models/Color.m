@@ -103,6 +103,15 @@ const int kDegreesInCircle = 360;
   return [self desaturate:100];
 }
 
+- (Color *)mix:(Color *)color weight:(int)weight {
+  float percent1 = weight / 100.0f;
+  float percent2 = 1.0f - percent1;
+
+  return [[Color alloc] initWithRGB:(_red * percent1) + (color.red * percent2)
+                              green:(_green * percent1) + (color.green * percent2)
+                               blue:(_blue * percent1) + (color.blue * percent2)];
+}
+
 - (NSImage *)asImage:(CGSize)size {
   NSRect rect = NSRectFromCGRect(CGRectMake(0.0f,
     0.0f,
@@ -258,6 +267,7 @@ const int kDegreesInCircle = 360;
       _hue = 60 * (((red - green) / range) + 4);
     }
   }
+  if (_hue < 0) _hue += kDegreesInCircle;
 }
 
 - (BOOL)isValidHexCode {

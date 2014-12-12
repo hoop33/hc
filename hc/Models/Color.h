@@ -25,6 +25,7 @@
 - (Color *)saturate:(int)percent;
 - (Color *)desaturate:(int)percent;
 - (Color *)grayscale;
+- (Color *)mix:(Color *)color weight:(int)weight;
 - (NSImage *)asImage:(CGSize)size;
 
 @end

@@ -23,6 +23,7 @@
 		5F2376780950DAC0CD3718FE /* DarkenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237BE3F1A502BC1F409AA4 /* DarkenCommand.m */; };
 		5F2376B104B4E7197BB1E8C2 /* TextOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2374F562226FAAA5253BDA /* TextOutput.m */; };
 		5F2377671360421F35BA59A2 /* VersionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237CE84ECDB2ABD7E4B110 /* VersionCommand.m */; };
+		5F2377CB9CF78BC1DC6345B4 /* MixCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237464F99D8D2D9002999C /* MixCommand.m */; };
 		5F2378B2FAE9BD11CB359E88 /* SaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2373835BFC918065E555F9 /* SaturateCommand.m */; };
 		5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */; };
 		5F2379A860113594388F0869 /* GrayscaleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237077005C33545CD4F05F /* GrayscaleCommand.m */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		5F23700A887D5468E840DE77 /* OutputsCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputsCommand.m; sourceTree = "<group>"; };
 		5F237027A0EA2FBC17BE1C54 /* ErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodes.h; sourceTree = "<group>"; };
+		5F23704290CA9E2A7B6F4A59 /* MixCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixCommand.h; sourceTree = "<group>"; };
 		5F237077005C33545CD4F05F /* GrayscaleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayscaleCommand.m; sourceTree = "<group>"; };
 		5F23709562CA79125D2E2C9E /* OutputOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputOption.m; sourceTree = "<group>"; };
 		5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesaturateCommand.m; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		5F2373835BFC918065E555F9 /* SaturateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaturateCommand.m; sourceTree = "<group>"; };
 		5F2373BCFEF4AE0E655387A8 /* ComplementCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplementCommand.h; sourceTree = "<group>"; };
 		5F2373D3C46B6A0900133BD8 /* LightenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightenCommand.h; sourceTree = "<group>"; };
+		5F237464F99D8D2D9002999C /* MixCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixCommand.m; sourceTree = "<group>"; };
 		5F237472D04420FE816356D7 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		5F2374BB7E78C8F350672127 /* NoteOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteOutput.h; sourceTree = "<group>"; };
 		5F2374E7A82BADAE76B7EE1F /* TextOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextOutput.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				5F237BC5CD3A70295778513B /* DesaturateCommand.h */,
 				5F237077005C33545CD4F05F /* GrayscaleCommand.m */,
 				5F237C2DDA87BA85C62A61A3 /* GrayscaleCommand.h */,
+				5F237464F99D8D2D9002999C /* MixCommand.m */,
+				5F23704290CA9E2A7B6F4A59 /* MixCommand.h */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				5F2378B2FAE9BD11CB359E88 /* SaturateCommand.m in Sources */,
 				5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */,
 				5F2379A860113594388F0869 /* GrayscaleCommand.m in Sources */,
+				5F2377CB9CF78BC1DC6345B4 /* MixCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

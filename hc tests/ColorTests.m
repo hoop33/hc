@@ -248,5 +248,25 @@
   XCTAssertEqualObjects(desaturate.hexCode, grayscale.hexCode);
 }
 
+- (void)testMixShouldCreateNewColor {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f00"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"00f"];
+  Color *mix = [color1 mix:color2 weight:50];
+  XCTAssertEqualObjects(@"#7f007f", mix.hexCode);
+}
+
+- (void)testMixWith25ShouldFavorBlue {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f00"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"00f"];
+  Color *mix = [color1 mix:color2 weight:25];
+  XCTAssertTrue(mix.blue > mix.red);
+}
+
+- (void)testMixWith75ShouldFavorRed {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f00"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"00f"];
+  Color *mix = [color1 mix:color2 weight:75];
+  XCTAssertTrue(mix.red > mix.blue);
+}
 
 @end
