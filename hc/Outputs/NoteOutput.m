@@ -26,24 +26,27 @@
     NSRectFill(rect);
     [image unlockFocus];
 
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = color.hexCode;
-    notification.contentImage = image;
-    notification.informativeText = [color description];
-    notification.soundName = NSUserNotificationDefaultSoundName;
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    [self notify:color.hexCode
+            text:[color description]
+           image:image];
   }
   if (response.message != nil) {
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"hc";
-    notification.informativeText = response.message;
-    notification.soundName = NSUserNotificationDefaultSoundName;
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    [self notify:@"hc"
+            text:response.message
+           image:nil];
   }
 }
 
 - (NSString *)summary {
   return @"Outputs as user notifications";
+}
+
+- (void)notify:(NSString *)title text:(NSString *)text image:(NSImage *)image {
+  NSUserNotification *notification = [[NSUserNotification alloc] init];
+  notification.title = title;
+  notification.informativeText = text;
+  notification.contentImage = image;
+  [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
