@@ -41,7 +41,7 @@
   return @"Multiplies two colors.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Multiply two colors";
 }
 

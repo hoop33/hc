@@ -40,7 +40,7 @@
   return @"Saturate a color by the specified percent (expressed as a decimal).";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Saturate color";
 }
 

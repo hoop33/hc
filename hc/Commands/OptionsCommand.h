@@ -6,5 +6,10 @@
 #import <Foundation/Foundation.h>
 #import "Command.h"
 
+@protocol Option;
+
 @interface OptionsCommand : NSObject <Command>
+
+- (NSString *)textForOption:(id <Option>)option showFull:(BOOL)showFull;
+
 @end

@@ -6,5 +6,10 @@
 #import <Foundation/Foundation.h>
 #import "Command.h"
 
+@protocol Output;
+
 @interface OutputsCommand : NSObject <Command>
+
+- (NSString *)textForOutput:(id <Output>)output showFull:(BOOL)showFull;
+
 @end

@@ -40,7 +40,7 @@
   return @"Desaturate a color completely, making it gray.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Desaturate color completely";
 }
 

@@ -40,7 +40,7 @@
   return @"Lighten a color by the specified percent (expressed as a decimal).";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Lighten color";
 }
 

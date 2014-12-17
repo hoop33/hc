@@ -8,4 +8,6 @@
 
 @interface CommandsCommand : NSObject<Command>
 
+- (NSString *)textForCommand:(id <Command>)command showFull:(BOOL)showFull;
+
 @end

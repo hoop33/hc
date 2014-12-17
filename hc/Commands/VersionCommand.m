@@ -23,7 +23,7 @@
   return @"Displays the version.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Display version";
 }
 

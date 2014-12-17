@@ -12,12 +12,12 @@
   return @"v";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Display version";
 }
 
 - (NSString *)help {
-  return nil;
+  return @"Displays the version.";
 }
 
 - (NSUInteger)numberOfParameters {

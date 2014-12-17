@@ -15,9 +15,7 @@
   NSMutableString *message = [[NSMutableString alloc] init];
   for (Class cls in [Utils allOutputs]) {
     id <Output> output = [[cls alloc] init];
-    [message appendFormat:@"%-12s%@\n",
-                          [[Utils nameForOutput:output] UTF8String],
-                          [output summary]];
+    [message appendString:[self textForOutput:output showFull:NO]];
   }
   Response *response = [[Response alloc] init];
   response.message = message;
@@ -32,8 +30,19 @@
   return @"Lists all available outputs.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"List available outputs";
+}
+
+- (NSString *)textForOutput:(id <Output>)output showFull:(BOOL)showFull {
+  NSMutableString *text = [NSMutableString string];
+  [text appendFormat:@"   %-12s%@\n",
+                     [[Utils nameForOutput:output] UTF8String],
+                     [output description]];
+  if (showFull) {
+    [text appendFormat:@"\n   %@\n", [output help]];
+  }
+  return text;
 }
 
 @end

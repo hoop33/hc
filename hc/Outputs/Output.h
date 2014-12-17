@@ -10,6 +10,6 @@
 @protocol Output <NSObject>
 
 - (void)output:(Response *)response;
-- (NSString *)summary;
+- (NSString *)help;
 
 @end

@@ -14,14 +14,7 @@
   NSMutableString *message = [[NSMutableString alloc] init];
   for (Class cls in [Utils allOptions]) {
     id <Option> option = [[cls alloc] init];
-    NSString *name = [Utils nameForOption:option];
-    if ([option numberOfParameters] == 1) {
-      name = [name stringByAppendingFormat:@" <%@>", name];
-    }
-    [message appendFormat:@"-%@, --%-18s%@\n",
-                          [option shortName],
-                          [name UTF8String],
-                          [option summary]];
+    [message appendString:[self textForOption:option showFull:NO]];
   }
   Response *response = [[Response alloc] init];
   response.message = message;
@@ -36,8 +29,29 @@
   return @"Lists all available options.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"List available options";
+}
+
+- (NSString *)textForOption:(id <Option>)option showFull:(BOOL)showFull {
+  NSMutableString *text = [NSMutableString string];
+  NSString *name = [Utils nameForOption:option];
+  if ([option numberOfParameters] == 1) {
+    name = [name stringByAppendingFormat:@" <%@>", name];
+  }
+
+  [text appendFormat:@"   -%@, --%-18s%@\n",
+                     [option shortName],
+                     [name UTF8String],
+                     [option description]];
+  if (showFull) {
+    NSArray *values = [option allowedValues];
+    if ([values count] > 0) {
+      [text appendFormat:@"   options: %@\n", [values componentsJoinedByString:@", "]];
+    }
+    [text appendFormat:@"\n   %@\n", [option help]];
+  }
+  return text;
 }
 
 @end

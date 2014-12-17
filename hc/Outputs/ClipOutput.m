@@ -25,8 +25,12 @@
   [pasteboard writeObjects:@[text]];
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Outputs to the clipboard";
+}
+
+- (NSString *)help {
+  return @"Copies the output as text to the clipboard.";
 }
 
 @end

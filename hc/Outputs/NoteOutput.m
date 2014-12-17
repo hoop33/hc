@@ -25,8 +25,12 @@
   }
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Outputs as user notifications";
+}
+
+- (NSString *)help {
+  return @"Opens a user notification with the color's text and a thumbnail of the color.";
 }
 
 - (void)notify:(NSString *)title text:(NSString *)text image:(NSImage *)image {

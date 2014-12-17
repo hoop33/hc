@@ -12,12 +12,12 @@
   return @"o";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Use <output> to output data";
 }
 
 - (NSString *)help {
-  return nil;
+  return @"Uses the specified output to display output data.";
 }
 
 - (NSUInteger)numberOfParameters {
@@ -26,8 +26,8 @@
 
 - (NSArray *)allowedValues {
   NSMutableArray *values = [NSMutableArray array];
-  for (Class cls in [Utils allOptions]) {
-    [values addObject:[Utils nameForOption:[[cls alloc] init]]];
+  for (Class cls in [Utils allOutputs]) {
+    [values addObject:[Utils nameForOutput:[[cls alloc] init]]];
   }
   return values;
 }

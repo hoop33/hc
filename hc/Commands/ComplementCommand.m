@@ -39,7 +39,7 @@
   return @"Returns the RGB complement of the specified color.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Show complement";
 }
 @end

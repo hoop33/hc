@@ -15,7 +15,6 @@ typedef NS_ENUM(NSInteger, OptionType) {
 @protocol Option <NSObject>
 
 - (NSString *)shortName;
-- (NSString *)summary;
 - (NSString *)help;
 - (NSUInteger)numberOfParameters;
 - (NSArray *)allowedValues;

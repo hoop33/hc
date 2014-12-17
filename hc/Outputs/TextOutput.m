@@ -14,15 +14,19 @@
   App *app = [App app];
   for (Color *color in response.colors) {
     [app out:color];
-    [app out:@"\n\n"];
+    [app out:@""];
   }
   if (response.message != nil) {
     [app out:response.message];
   }
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Outputs as text to stdout";
+}
+
+- (NSString *)help {
+  return @"Displays the color codes for a color.";
 }
 
 @end

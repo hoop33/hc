@@ -10,6 +10,9 @@
 #import "Response.h"
 #import "OutputsCommand.h"
 #import "OptionsCommand.h"
+#import "Output.h"
+#import "Option.h"
+#import "Utils.h"
 
 @implementation HelpCommand
 
@@ -44,7 +47,7 @@
     @"Otherwise, displays a help summary.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Display help";
 }
 
@@ -72,7 +75,32 @@
   return message;
 }
 
-- (BOOL)show:(NSString *)command {
+- (BOOL)show:(NSString *)param {
+  return [self showHelpForInstance:[Utils commandInstanceForName:param] name:param] |
+    [self showHelpForInstance:[Utils optionInstanceForName:param] name:param] |
+    [self showHelpForInstance:[Utils outputInstanceForName:param] name:param];
+}
+
+- (BOOL)showHelpForInstance:(id)instance name:(NSString *)name {
+  if (instance == nil) return NO;
+
+  App *app = [App app];
+  if ([instance conformsToProtocol:@protocol(Command)]) {
+    // Commands
+    CommandsCommand *command = [[CommandsCommand alloc] init];
+    [app out:[NSString stringWithFormat:@"Help for command \"%@\"", name]];
+    [app out:[command textForCommand:instance showFull:YES]];
+  } else if ([instance conformsToProtocol:@protocol(Option)]) {
+    // Options
+    OptionsCommand *command = [[OptionsCommand alloc] init];
+    [app out:[NSString stringWithFormat:@"Help for option \"%@\"", name]];
+    [app out:[command textForOption:instance showFull:YES]];
+  } else if ([instance conformsToProtocol:@protocol(Output)]) {
+    // Outputs
+    OutputsCommand *command = [[OutputsCommand alloc] init];
+    [app out:[NSString stringWithFormat:@"Help for output \"%@\"", name]];
+    [app out:[command textForOutput:instance showFull:YES]];
+  }
   return YES;
 }
 

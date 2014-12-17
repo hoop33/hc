@@ -41,7 +41,7 @@
   return @"Spins a color by the specified degrees.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Spin color";
 }
 

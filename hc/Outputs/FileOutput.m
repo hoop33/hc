@@ -34,8 +34,12 @@
   }
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Outputs as files";
+}
+
+- (NSString *)help {
+  return @"Creates PNG files in the current directory with the color's hex code as the file name. The color #f00, for example, creates the file ff0000.png";
 }
 
 @end

@@ -12,6 +12,5 @@
 - (Response *)run:(NSArray *)params error:(NSError **)error;
 - (NSString *)usage;
 - (NSString *)help;
-- (NSString *)summary;
 
 @end

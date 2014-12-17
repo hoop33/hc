@@ -38,7 +38,7 @@
   return @"Shows a color.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Show color";
 }
 

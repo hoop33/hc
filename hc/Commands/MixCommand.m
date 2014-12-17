@@ -43,7 +43,7 @@
   return @"Mixes two colors using the specified weight, or 50 if weight not specified.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"Mix two colors";
 }
 

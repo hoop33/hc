@@ -13,9 +13,7 @@
   NSMutableString *message = [[NSMutableString alloc] init];
   for (Class cls in [Utils allCommands]) {
     id <Command> command = [[cls alloc] init];
-    [message appendFormat:@"%-12s%@\n",
-                          [[Utils nameForCommand:command] UTF8String],
-                          [command summary]];
+    [message appendString:[self textForCommand:command showFull:NO]];
   }
   Response *response = [[Response alloc] init];
   response.message = message;
@@ -30,8 +28,21 @@
   return @"Lists all available commands.";
 }
 
-- (NSString *)summary {
+- (NSString *)description {
   return @"List available commands";
+}
+
+- (NSString *)textForCommand:(id <Command>)command showFull:(BOOL)showFull {
+  NSMutableString *text = [NSMutableString string];
+  NSString *name = [Utils nameForCommand:command];
+  [text appendFormat:@"   %-12s%@\n",
+                        [name UTF8String],
+                        [command description]];
+  if (showFull) {
+    [text appendFormat:@"   usage:      hc %@ %@\n", name, [command usage]];
+    [text appendFormat:@"\n   %@\n", [command help]];
+  }
+  return text;
 }
 
 @end
