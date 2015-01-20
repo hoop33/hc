@@ -52,7 +52,14 @@
   }
 
   if (errorMessage != nil) {
-    [[App app] out:errorMessage];
+    if (error != NULL) {
+      *error = [NSError errorWithDomain:[[App app] errorDomain]
+                                   code:ErrorCodeBadInput
+                               userInfo:@{
+                                          NSLocalizedDescriptionKey :
+                                            errorMessage
+                                          }];
+    }
     return NO;
   } else {
     _params = [NSArray arrayWithArray:args];

@@ -10,6 +10,10 @@
 @implementation VersionCommand
 
 - (Response *)run:(NSArray *)params error:(NSError **)error {
+  // Suppress unused parameter warnings
+  (void)params;
+  (void)error;
+
   Response *response = [[Response alloc] init];
   response.message = [[App app] version];
   return response;

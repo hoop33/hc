@@ -10,6 +10,10 @@
 @implementation CommandsCommand
 
 - (Response *)run:(NSArray *)params error:(NSError **)error {
+  // Suppress unused parameter warnings
+  (void)params;
+  (void)error;
+  
   NSMutableString *message = [[NSMutableString alloc] init];
   for (Class cls in [Utils allCommands]) {
     id <Command> command = [[cls alloc] init];

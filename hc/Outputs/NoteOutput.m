@@ -42,6 +42,10 @@
 }
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+  // Suppress unused parameter warnings -- we always return YES
+  (void)center;
+  (void)notification;
+
   return YES;
 }
 

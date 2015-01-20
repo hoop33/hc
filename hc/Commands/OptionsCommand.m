@@ -11,6 +11,10 @@
 @implementation OptionsCommand
 
 - (Response *)run:(NSArray *)params error:(NSError **)error {
+  // Suppress unused parameter warnings
+  (void)params;
+  (void)error;
+
   NSMutableString *message = [[NSMutableString alloc] init];
   for (Class cls in [Utils allOptions]) {
     id <Option> option = [[cls alloc] init];

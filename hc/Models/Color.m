@@ -11,6 +11,7 @@ NSString *const kDefaultHexCode = @"#000000";
 const int kHexCodeLength = 7;
 const int kDegreesCharacterCode = 176;
 const int kDegreesInCircle = 360;
+const float kEpsilon = 0.0000000001f;
 
 @implementation Color
 
@@ -107,15 +108,15 @@ const int kDegreesInCircle = 360;
   float percent1 = weight / 100.0f;
   float percent2 = 1.0f - percent1;
 
-  return [[Color alloc] initWithRGB:(_red * percent1) + (color.red * percent2)
-                              green:(_green * percent1) + (color.green * percent2)
-                               blue:(_blue * percent1) + (color.blue * percent2)];
+  return [[Color alloc] initWithRGB:(int)((_red * percent1) + (color.red * percent2))
+                              green:(int)((_green * percent1) + (color.green * percent2))
+                               blue:(int)((_blue * percent1) + (color.blue * percent2))];
 }
 
 - (Color *)multiply:(Color *)color {
-  return [[Color alloc] initWithRGB:(_red * color.red) / 255.0f
-                              green:(_green * color.green) / 255.0f
-                               blue:(_blue * color.blue) / 255.0f];
+  return [[Color alloc] initWithRGB:(int)((_red * color.red) / 255.0f)
+                              green:(int)((_green * color.green) / 255.0f)
+                               blue:(int)((_blue * color.blue) / 255.0f)];
 }
 
 - (NSImage *)asImage:(CGSize)size {
@@ -230,9 +231,9 @@ const int kDegreesInCircle = 360;
     blue = x;
   }
 
-  _red = (red + m) * 255;
-  _green = (green + m) * 255;
-  _blue = (blue + m) * 255;
+  _red = (int)((red + m) * 255);
+  _green = (int)((green + m) * 255);
+  _blue = (int)((blue + m) * 255);
 }
 
 - (void)calculateHexCodeFromRGB {
@@ -255,22 +256,22 @@ const int kDegreesInCircle = 360;
   float maxValue = MAX(red, MAX(green, blue));
   float range = maxValue - minValue;
 
-  _lightness = (maxValue + minValue) / 0.02f;
+  _lightness = (int)((maxValue + minValue) / 0.02f);
 
   if (range == 0.0f) {
     _hue = 0;
     _saturation = 0;
   } else {
-    _saturation = 100 * ((_lightness < 50) ?
+    _saturation = (int)(100 * ((_lightness < 50) ?
       range / (maxValue + minValue) :
-      range / (2 - maxValue - minValue));
+      range / (2 - maxValue - minValue)));
 
-    if (red == maxValue) {
-      _hue = 60 * fmodf(((green - blue) / range), 6);
-    } else if (green == maxValue) {
-      _hue = 60 * (((blue - red) / range) + 2);
+    if (fabs(red - maxValue) < kEpsilon) {
+      _hue = (int)(60 * fmodf(((green - blue) / range), 6));
+    } else if (fabs(green - maxValue) < kEpsilon) {
+      _hue = (int)(60 * (((blue - red) / range) + 2));
     } else {
-      _hue = 60 * (((red - green) / range) + 4);
+      _hue = (int)(60 * (((red - green) / range) + 4));
     }
   }
   if (_hue < 0) _hue += kDegreesInCircle;
