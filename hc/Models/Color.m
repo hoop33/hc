@@ -72,9 +72,9 @@ const int kDegreesInCircle = 360;
 }
 
 - (Color *)spin:(int)degrees {
-  degrees %= kDegreesInCircle;
-  if (degrees < 0) degrees += kDegreesInCircle;
-  return [[Color alloc] initWithHSL:_hue + degrees
+  int spinDegrees = degrees % kDegreesInCircle;
+  if (spinDegrees < 0) spinDegrees += kDegreesInCircle;
+  return [[Color alloc] initWithHSL:_hue + spinDegrees
                          saturation:_saturation
                           lightness:_lightness];
 }
