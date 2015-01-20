@@ -9,7 +9,7 @@
 
 @interface Response : NSObject
 
-@property (readonly, nonatomic, copy) NSMutableArray *colors;
+@property (readonly, nonatomic, strong) NSMutableArray *colors;
 @property (nonatomic, copy) NSString *message;
 
 - (void)add:(Color *)color;
