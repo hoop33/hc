@@ -27,6 +27,7 @@
 - (Color *)grayscale;
 - (Color *)mix:(Color *)color weight:(int)weight;
 - (Color *)multiply:(Color *)color;
+- (Color *)screen:(Color *)color;
 - (NSImage *)asImage:(CGSize)size;
 
 @end
