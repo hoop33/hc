@@ -7,11 +7,14 @@
 
 #import "Color.h"
 
+typedef float (^BlendModeBlock)(float backdrop, float source);
+
 NSString *const kDefaultHexCode = @"#000000";
 const int kHexCodeLength = 7;
 const int kDegreesCharacterCode = 176;
 const int kDegreesInCircle = 360;
 const float kEpsilon = 0.0000000001f;
+const float kRGBDivisor = 255.0f;
 
 @implementation Color
 
@@ -114,9 +117,15 @@ const float kEpsilon = 0.0000000001f;
 }
 
 - (Color *)multiply:(Color *)color {
-  return [[Color alloc] initWithRGB:(int)((_red * color.red) / 255.0f)
-                              green:(int)((_green * color.green) / 255.0f)
-                               blue:(int)((_blue * color.blue) / 255.0f)];
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    return (backdrop * source);
+  }];
+}
+
+- (Color *)screen:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    return ((backdrop + source) - (backdrop * source));
+  }];
 }
 
 - (NSImage *)asImage:(CGSize)size {
@@ -126,9 +135,9 @@ const float kEpsilon = 0.0000000001f;
     size.height));
   NSImage *image = [[NSImage alloc] initWithSize:size];
   [image lockFocus];
-  [[NSColor colorWithDeviceRed:(_red / 255.0f)
-                         green:(_green / 255.0f)
-                          blue:(_blue / 255.0f)
+  [[NSColor colorWithDeviceRed:(_red / kRGBDivisor)
+                         green:(_green / kRGBDivisor)
+                          blue:(_blue / kRGBDivisor)
                          alpha:1.0f] set];
   NSRectFill(rect);
   [image unlockFocus];
@@ -136,6 +145,15 @@ const float kEpsilon = 0.0000000001f;
 }
 
 #pragma mark - Private methods
+
+- (Color *)blend:(Color *)color blendMode:(BlendModeBlock)blendMode {
+  int red = (int)(blendMode(_red / kRGBDivisor, color.red / kRGBDivisor) * kRGBDivisor);
+  int green = (int)(blendMode(_green / kRGBDivisor, color.green / kRGBDivisor) * kRGBDivisor);
+  int blue = (int)(blendMode(_blue / kRGBDivisor, color.blue / kRGBDivisor) * kRGBDivisor);
+  return [[Color alloc] initWithRGB:red
+                              green:green
+                               blue:blue];
+}
 
 - (void)normalizeHexCode {
   if (![self isValidHexCode]) {
@@ -248,9 +266,9 @@ const float kEpsilon = 0.0000000001f;
 }
 
 - (void)calculateHSLFromRGB {
-  float red = _red / 255.0f;
-  float green = _green / 255.0f;
-  float blue = _blue / 255.0f;
+  float red = _red / kRGBDivisor;
+  float green = _green / kRGBDivisor;
+  float blue = _blue / kRGBDivisor;
 
   float minValue = MIN(red, MIN(green, blue));
   float maxValue = MAX(red, MAX(green, blue));

@@ -28,6 +28,7 @@
 		5F2378BFCDF8A11E84E2592E /* DesaturateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */; };
 		5F2379A860113594388F0869 /* GrayscaleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237077005C33545CD4F05F /* GrayscaleCommand.m */; };
 		5F2379E0270F1354BD9D7970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237DA74682CBBE0CA5F63C /* main.m */; };
+		5F237A916D67F884BBEAF7A5 /* ScreenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237776D31F45DCF589CBA1 /* ScreenCommand.m */; };
 		5F237B584636F45B1AEC5078 /* ComplementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2376B3EE28FCA611905FDD /* ComplementCommand.m */; };
 		5F237BBAFCD717A3D8299182 /* ShowCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2378397C2F4E99078A0B9B /* ShowCommand.m */; };
 		5F237BBC45B1633F1399B78E /* CommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F237251B301124792B75D9E /* CommandLine.m */; };
@@ -59,6 +60,7 @@
 		5F2370DC00B1B8E373CC8548 /* DesaturateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesaturateCommand.m; sourceTree = "<group>"; };
 		5F23710DE89165C300E2019C /* HelpCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCommand.m; sourceTree = "<group>"; };
 		5F237156F21A906F16611E8A /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
+		5F2371714629AA7A02E4A343 /* ScreenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenCommand.h; sourceTree = "<group>"; };
 		5F23719F84F9E48D9D3230E9 /* DarkenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkenCommand.h; sourceTree = "<group>"; };
 		5F2371BC33EA57567FA852A3 /* MultiplyCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplyCommand.m; sourceTree = "<group>"; };
 		5F2371EDF9686006E764C217 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		5F2376B3EE28FCA611905FDD /* ComplementCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplementCommand.m; sourceTree = "<group>"; };
 		5F2376DD9BBBE09F55584603 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		5F2377129A9688DDABFB7FA7 /* SaturateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaturateCommand.h; sourceTree = "<group>"; };
+		5F237776D31F45DCF589CBA1 /* ScreenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenCommand.m; sourceTree = "<group>"; };
 		5F237796CBCBF5732798656E /* OutputOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputOption.h; sourceTree = "<group>"; };
 		5F23780FB7E5FA0BFC207E66 /* VersionOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionOption.h; sourceTree = "<group>"; };
 		5F2378397C2F4E99078A0B9B /* ShowCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCommand.m; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				5F23704290CA9E2A7B6F4A59 /* MixCommand.h */,
 				5F2371BC33EA57567FA852A3 /* MultiplyCommand.m */,
 				5F237F7E461AD3A500CB3F7E /* MultiplyCommand.h */,
+				5F2371714629AA7A02E4A343 /* ScreenCommand.h */,
+				5F237776D31F45DCF589CBA1 /* ScreenCommand.m */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				5F2379A860113594388F0869 /* GrayscaleCommand.m in Sources */,
 				5F2377CB9CF78BC1DC6345B4 /* MixCommand.m in Sources */,
 				5F237E6A028A220AA0BE64EC /* MultiplyCommand.m in Sources */,
+				5F237A916D67F884BBEAF7A5 /* ScreenCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

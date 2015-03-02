@@ -273,7 +273,7 @@
   Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
   Color *color2 = [[Color alloc] initWithHexCode:@"000"];
   Color *multiply = [color1 multiply:color2];
-  XCTAssertEqualObjects(@"#000000", multiply.hexCode);
+  XCTAssertEqualObjects(color2.hexCode, multiply.hexCode);
 }
 
 - (void)testMultiplyByWhiteShouldBeUnchanged {
@@ -288,6 +288,27 @@
   Color *color2 = [[Color alloc] initWithHexCode:@"333"];
   Color *multiply = [color1 multiply:color2];
   XCTAssertTrue(color1.lightness > multiply.lightness);
+}
+
+- (void)testScreenByBlackShouldBeSame {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *screen = [color1 screen:color2];
+  XCTAssertEqualObjects(color1.hexCode, screen.hexCode);
+}
+
+- (void)testScreenByWhiteShouldBeWhite {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *screen = [color1 screen:color2];
+  XCTAssertEqualObjects(color2.hexCode, screen.hexCode);
+}
+
+- (void)testScreenShouldBeLighter {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"333"];
+  Color *screen = [color1 screen:color2];
+  XCTAssertTrue(screen.lightness > color1.lightness);
 }
 
 @end
