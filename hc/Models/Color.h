@@ -28,6 +28,13 @@
 - (Color *)mix:(Color *)color weight:(int)weight;
 - (Color *)multiply:(Color *)color;
 - (Color *)screen:(Color *)color;
+- (Color *)overlay:(Color *)color;
+- (Color *)softlight:(Color *)color;
+- (Color *)hardlight:(Color *)color;
+- (Color *)difference:(Color *)color;
+- (Color *)exclusion:(Color *)color;
+- (Color *)average:(Color *)color;
+- (Color *)negation:(Color *)color;
 - (NSImage *)asImage:(CGSize)size;
 
 @end

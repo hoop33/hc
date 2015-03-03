@@ -311,4 +311,102 @@
   XCTAssertTrue(screen.lightness > color1.lightness);
 }
 
+- (void)testOverlayByBlackShouldBeRed {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *overlay = [color1 overlay:color2];
+  XCTAssertEqualObjects(@"#ff0000", overlay.hexCode);
+}
+
+- (void)testOverlayByWhiteShouldBeYellow {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *overlay = [color1 overlay:color2];
+  XCTAssertEqualObjects(@"#ffcc00", overlay.hexCode);
+}
+
+- (void)testSoftlightByBlackShouldBeRed {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *softlight = [color1 softlight:color2];
+  XCTAssertEqualObjects(@"#ff2800", softlight.hexCode);
+}
+
+- (void)testSoftlightByWhiteShouldBeYellow {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *softlight = [color1 softlight:color2];
+  XCTAssertEqualObjects(@"#ffa100", softlight.hexCode);
+}
+
+- (void)testHardlightByBlackShouldBeBlack {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *hardlight = [color1 hardlight:color2];
+  XCTAssertEqualObjects(color2.hexCode, hardlight.hexCode);
+}
+
+- (void)testHardlightByWhiteShouldBeWhite {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *hardlight = [color1 hardlight:color2];
+  XCTAssertEqualObjects(color2.hexCode, hardlight.hexCode);
+}
+
+- (void)testDifferenceByBlackShouldBeSame {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *difference = [color1 difference:color2];
+  XCTAssertEqualObjects(color1.hexCode, difference.hexCode);
+}
+
+- (void)testDifferenceByWhiteShouldBeBlue {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *difference = [color1 difference:color2];
+  XCTAssertEqualObjects(@"#0099ff", difference.hexCode);
+}
+
+- (void)testExclusionByBlackShouldBeSame {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *exclusion = [color1 exclusion:color2];
+  XCTAssertEqualObjects(color1.hexCode, exclusion.hexCode);
+}
+
+- (void)testExclusionByWhiteShouldBeBlue {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *exclusion = [color1 exclusion:color2];
+  XCTAssertEqualObjects(@"#0098ff", exclusion.hexCode);
+}
+
+- (void)testAverageByBlackShouldBeBrown {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *average = [color1 average:color2];
+  XCTAssertEqualObjects(@"#7f3300", average.hexCode);
+}
+
+- (void)testAverageByWhiteShouldBeOrange {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *average = [color1 average:color2];
+  XCTAssertEqualObjects(@"#ffb27f", average.hexCode);
+}
+
+- (void)testNegationByBlackShouldBeSame {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"000"];
+  Color *negation = [color1 negation:color2];
+  XCTAssertEqualObjects(@"#ff6500", negation.hexCode);
+}
+
+- (void)testNegationByWhiteShouldBeBlue {
+  Color *color1 = [[Color alloc] initWithHexCode:@"f60"];
+  Color *color2 = [[Color alloc] initWithHexCode:@"fff"];
+  Color *negation = [color1 negation:color2];
+  XCTAssertEqualObjects(@"#0099ff", negation.hexCode);
+}
+
 @end
