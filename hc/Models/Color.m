@@ -5,6 +5,7 @@
 
 @import AppKit;
 
+#import <math.h>
 #import "Color.h"
 
 typedef float (^BlendModeBlock)(float backdrop, float source);
@@ -125,6 +126,60 @@ const float kRGBDivisor = 255.0f;
 - (Color *)screen:(Color *)color {
   return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
     return ((backdrop + source) - (backdrop * source));
+  }];
+}
+
+- (Color *)overlay:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    backdrop *= 2;
+    return backdrop <= 1 ? backdrop * source :
+    ((backdrop - 1 + source) - ((backdrop - 1) * source));
+  }];
+}
+
+- (Color *)softlight:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    float tmp1 = 1.0f;
+    float tmp2 = backdrop;
+    if (source > 0.5f) {
+      tmp2 = 1.0f;
+      tmp1 = backdrop > 0.25f ?
+      (float)(sqrt(backdrop)) :
+      ((16 * backdrop - 12) * backdrop + 4) * backdrop;
+    }
+    return backdrop - (1 - 2 * source) * tmp2 * (tmp1 - backdrop);
+  }];
+}
+
+- (Color *)hardlight:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    source *= 2;
+    return source <= 1 ? source * backdrop :
+    ((source - 1 + backdrop) - ((source - 1) * backdrop));
+  }];
+}
+
+- (Color *)difference:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    return fabsf(backdrop - source);
+  }];
+}
+
+- (Color *)exclusion:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    return (backdrop + source) - (2 * backdrop * source);
+  }];
+}
+
+- (Color *)average:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    return (backdrop + source) / 2;
+  }];
+}
+
+- (Color *)negation:(Color *)color {
+  return [self blend:color blendMode:(BlendModeBlock) ^(float backdrop, float source) {
+    return 1 - fabsf(backdrop + source - 1);
   }];
 }
 
