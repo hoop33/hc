@@ -1,6 +1,7 @@
 # hc -- Hex Colors on the Command Line
 
 [![Join the chat at https://gitter.im/hoop33/hc](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hoop33/hc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 `hc` is a command-line tool for working with hex colors. It's written in Objective-C and runs on Mac OS X 10.9+.
 
 ## Installation
@@ -35,19 +36,27 @@ hc show "#ab1278"
 Commands specify what you're trying to do to a color. You can get a list of commands by typing `hc commands`. The output will look like this:
 
 ```
+   average     Average colors
    commands    List available commands
    complement  Show complement
    darken      Darken color
    desaturate  Desaturate color
+   difference  Subtract colors
+   exclusion   Subtract colors, with lower contrast
    grayscale   Desaturate color completely
+   hardlight   Overlays, but with the color roles reversed
    help        Display help
    lighten     Lighten color
    mix         Mix two colors
    multiply    Multiply two colors
+   negation    Opposite of difference
    options     List available options
    outputs     List available outputs
+   overlay     Combine multiply and screen
    saturate    Saturate color
+   screen      Opposite of multiply
    show        Show color
+   softlight   Similar to overlay
    spin        Spin color
    version     Display version
 ```
