@@ -1,6 +1,8 @@
 # hc -- Hex Colors on the Command Line
 
 [![Join the chat at https://gitter.im/hoop33/hc](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hoop33/hc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Issues](https://img.shields.io/github/issues/hoop33/hc.svg)](https://github.com/hoop33/hc/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 `hc` is a command-line tool for working with hex colors. It's written in Objective-C and runs on Mac OS X 10.9+.
 
