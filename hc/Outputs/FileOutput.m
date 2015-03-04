@@ -23,8 +23,9 @@
 
     NSData *imageData = [bitmapImageRep representationUsingType:NSPNGFileType
                                                      properties:nil];
-    [imageData writeToFile:[NSString stringWithFormat:@"%@.png", [color.hexCode substringFromIndex:1]]
-                atomically:NO];
+    NSString *filename = [NSString stringWithFormat:@"%@.png", [color.hexCode substringFromIndex:1]];
+    [imageData writeToFile:filename atomically:NO];
+    [[NSWorkspace sharedWorkspace] openFile:filename];
   }
   if (response.message != nil) {
     [response.message writeToFile:@"message.txt"
