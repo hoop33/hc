@@ -1,3 +1,10 @@
+
+v0.3.0 / 2015-03-04
+==================
+
+  * Open any color files after writing them when using --output file
+  * Add badges for issues and license to README
+
 v0.2.0 / 2015-03-03
 ===================
 
