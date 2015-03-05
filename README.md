@@ -1,6 +1,7 @@
 # hc -- Hex Colors on the Command Line
 
 [![Join the chat at https://gitter.im/hoop33/hc](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hoop33/hc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/hoop33/hc.svg?branch=master)](https://travis-ci.org/hoop33/hc)
 [![Issues](https://img.shields.io/github/issues/hoop33/hc.svg)](https://github.com/hoop33/hc/issues)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
