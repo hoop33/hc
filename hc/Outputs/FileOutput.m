@@ -21,8 +21,12 @@
     NSBitmapImageRep *bitmapImageRep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:rect];
     [image unlockFocus];
 
+    NSDictionary *props = [NSDictionary dictionaryWithObjectsAndKeys:
+                           NSImageGamma, [NSNumber numberWithFloat: 1.0f],
+                           nil];
     NSData *imageData = [bitmapImageRep representationUsingType:NSPNGFileType
-                                                     properties:nil];
+                                                     properties:props
+                         ];
     NSString *filename = [NSString stringWithFormat:@"%@.png", [color.hexCode substringFromIndex:1]];
     [imageData writeToFile:filename atomically:NO];
     [[NSWorkspace sharedWorkspace] openFile:filename];
