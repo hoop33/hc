@@ -79,7 +79,11 @@ const float kRGBDivisor = 255.0f;
 - (Color *)spin:(int)degrees {
   int spinDegrees = degrees % kDegreesInCircle;
   if (spinDegrees < 0) spinDegrees += kDegreesInCircle;
-  return [[Color alloc] initWithHSL:_hue + spinDegrees
+  int hue = _hue + spinDegrees;
+  if (hue >= kDegreesInCircle) {
+    hue -= kDegreesInCircle;
+  }
+  return [[Color alloc] initWithHSL:hue
                          saturation:_saturation
                           lightness:_lightness];
 }
