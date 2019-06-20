@@ -8,13 +8,13 @@
 `hc` is a command-line tool for working with hex colors. It's written in Objective-C and runs on Mac OS X 10.9+.
 
 ## Installation
-Open the project in Xcode 6+ and build normally. You can also build from the command line using `xcodebuild`. To create a Release build, for example, you can type:
+Open the project in Xcode 10+ and build normally. You can also build from the command line using `xcodebuild`. To create a Release build, for example, you can type:
 
 ```
-xcodebuild -scheme hc DSTROOT="~/Desktop" archive
+xcodebuild -scheme hc DSTROOT=. archive
 ```
 
-This command creates a Release build in `~/Desktop/usr/local/bin`.
+This command creates a Release build in `./usr/local/bin`.
 
 ## Usage
 `hc` commands take the form:
