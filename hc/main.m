@@ -24,11 +24,13 @@ int main(int argc, const char *argv[]) {
     CommandLine *commandLine = [[CommandLine alloc] init];
     if ([commandLine parseParameters:params error:&error]) {
       return [commandLine run];
-    } else if (error != NULL) {
+    }
+    
+    if (error != NULL) {
       [app out:[error localizedDescription]];
       return (int) error.code;
-    } else {
-      return ErrorCodeUnknown;
     }
+    
+    return ErrorCodeUnknown;
   }
 }
